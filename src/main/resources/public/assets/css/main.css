@@ -962,9 +962,10 @@ ul.activity-list > li {
   -moz-border-radius: 5px;
   border-radius: 5px;
   width: 70%;
-  height: 450px;
+  height: 600px;
   margin: 0 auto;
   background-color: #fff; }
+
   .auth-box:before {
     display: inline-block;
     vertical-align: middle;

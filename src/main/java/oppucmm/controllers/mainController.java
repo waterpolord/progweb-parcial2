@@ -64,8 +64,8 @@ public class mainController extends ControladorBase {
             String fullNmae = ctx.formParam("fullName");
             String username = ctx.formParam("username");
             String password = ctx.formParam("password");
-            String rol = ctx.formParam("rol");
-            System.out.println("el valor es> "+ctx.formParam("rol"));
+            String rol = ctx.formParam("role");
+            System.out.println("el valor es> "+ctx.formParam("role"));
             User aux = new User(username, fullNmae, password);
             if(rol!=null){
                 if(rol.matches("Administrador"))
@@ -80,10 +80,9 @@ public class mainController extends ControladorBase {
                     ctx.render("public/index.html", modelo);
                     System.out.println("CREADO");
                 }else{
-                    //El nombre de usuario ya existe, intentelo de nuevo.
                     modelo.put("Error", "El nombre de usuario ya existe. Intentelo de nuevo! ");
                     ctx.render("public/register.html", modelo);
-                    System.out.println("NO SE PUDO CREAR EXISTOSAMENTE");
+                    System.out.println("NO SE PUDO CREAR");
                 }
             }else{
                 System.out.println("Se debe asignar un rol");

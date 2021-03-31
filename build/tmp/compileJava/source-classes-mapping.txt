@@ -1,12 +1,20 @@
-oppucmm/encapsulations/User.java
- oppucmm.encapsulations.User
+oppucmm/services/UserServices.java
+ oppucmm.services.UserServices
 oppucmm/utilities/ControladorBase.java
  oppucmm.utilities.ControladorBase
 oppucmm/controllers/ExcepcionesControlador.java
  oppucmm.controllers.ExcepcionesControlador
-oppucmm/services/UserServices.java
- oppucmm.services.UserServices
-oppucmm/Main.java
- oppucmm.Main
+oppucmm/encapsulations/User.java
+ oppucmm.encapsulations.User
 oppucmm/services/DataBaseServices.java
  oppucmm.services.DataBaseServices
+oppucmm/utilities/RolesApp.java
+ oppucmm.utilities.RolesApp
+oppucmm/services/ManejadorBD.java
+ oppucmm.services.ManejadorBD
+oppucmm/encapsulations/Controller.java
+ oppucmm.encapsulations.Controller
+oppucmm/Main.java
+ oppucmm.Main
+oppucmm/controllers/mainController.java
+ oppucmm.controllers.mainController

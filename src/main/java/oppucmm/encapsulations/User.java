@@ -2,12 +2,20 @@ package oppucmm.encapsulations;
 
 import oppucmm.utilities.RolesApp;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
-
-public class User {
+@Entity
+@Table(name = "User")
+public class User implements Serializable {
+    @Id
+    @Column(name = "fullName")
     private String fullName;
+    @Column(name = "username")
     private String username;
+    @Column(name = "password")
     private String password;
+    @ElementCollection(fetch = FetchType.EAGER)
     private Set<RolesApp> rolesList;
 
     /*Constructor empty*/

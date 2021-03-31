@@ -11,10 +11,10 @@ public class DataBaseServices {
     private static DataBaseServices conexionBD;
     private static Server tcp;
     private static Server webServer;
+
     public DataBaseServices() throws SQLException {
         registroDriver();
     }
-
     public static DataBaseServices getInstance() throws SQLException {
         if(conexionBD==null){
             conexionBD = new DataBaseServices();

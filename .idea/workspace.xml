@@ -4,133 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a1380f5-c9b3-45cf-8c99-cdf2162b47ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileContent/fileContent.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.7/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.7/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/parcial2.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_30_2021_11_55_AM_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_30_2021_11_55_AM__Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/oppucmm/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/oppucmm/controllers/ExcepcionesControlador.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/oppucmm/encapsulations/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/oppucmm/services/DataBaseServices.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/oppucmm/services/UserServices.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/oppucmm/utilities/ControladorBase.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/css/main.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/img/apple-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/img/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/img/icons8-admin-settings-male-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/img/login-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/img/logo-dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/img/logo-pucmm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/img/profile-bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/img/user-medium.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/img/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/img/user1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/img/user2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/img/user3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/img/user4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/img/user5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/scripts/klorofil-common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/scripts/validCamps.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/bootstrap/css/bootstrap-theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/bootstrap/css/bootstrap-theme.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/bootstrap/js/npm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/chartist/css/chartist.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/chartist/css/chartist.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/chartist/js/chartist.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/chartist/js/chartist.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/chartist/map/chartist.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/chartist/map/chartist.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/chartist/scss/chartist.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/font-awesome/css/font-awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/jquery-slimscroll/jquery.slimscroll.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/jquery.easy-pie-chart/angular.easypiechart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/jquery.easy-pie-chart/angular.easypiechart.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/jquery.easy-pie-chart/easypiechart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/jquery.easy-pie-chart/easypiechart.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/jquery/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/jquery/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/jquery/jquery.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/linearicons/fonts/Linearicons-Free.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/linearicons/fonts/Linearicons-Free.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/linearicons/fonts/Linearicons-Free.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/linearicons/fonts/Linearicons-Free.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/linearicons/fonts/Linearicons-Free.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/linearicons/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/toastr/toastr.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/toastr/toastr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/toastr/toastr.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/toastr/toastr.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/charts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/page-lockscreen.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/page-login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/panels.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/public/tables.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oppucmm/encapsulations/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oppucmm/services/DataBaseServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oppucmm/utilities/RolesApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileChanges/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileChanges/last-build.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+    <list default="true" id="5a1380f5-c9b3-45cf-8c99-cdf2162b47ee" name="Default Changelist" comment="Uploading updates...">
+      <change afterPath="$PROJECT_DIR$/src/main/java/oppucmm/controllers/mainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oppucmm/encapsulations/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oppucmm/services/ManejadorBD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oppucmm/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ExcepcionesControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oppucmm/controllers/ExcepcionesControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/encapsulations/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oppucmm/services/UserServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oppucmm/utilities/ControladorBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/oppucmm/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/oppucmm/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/oppucmm/encapsulations/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/oppucmm/encapsulations/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/oppucmm/services/DataBaseServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/oppucmm/services/DataBaseServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/oppucmm/services/UserServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/oppucmm/services/UserServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/public/assets/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/public/page-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/public/page-login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/public/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/public/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oppucmm/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oppucmm/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oppucmm/encapsulations/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oppucmm/encapsulations/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oppucmm/services/DataBaseServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oppucmm/services/DataBaseServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oppucmm/services/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oppucmm/services/UserServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/assets/vendor/bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/assets/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/page-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/page-login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,26 +103,13 @@
       <recent name="C:\Users\Samuel Peña Moronta\Desktop\SEGUNDO_PARCIAL\progweb-parcial2\src\main\java\op\pucmm\eict" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="oppucmm.services" />
       <recent name="oppucmm.utilities" />
       <recent name="oppucmm.controllers" />
-      <recent name="oppucmm.services" />
       <recent name="services" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="progweb-parcial2 [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -302,8 +192,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617172783975</updated>
-      <workItem from="1617172785550" duration="3190000" />
+      <workItem from="1617172785550" duration="3582000" />
+      <workItem from="1617198813166" duration="4208000" />
+      <workItem from="1617204921893" duration="11608000" />
+      <workItem from="1617216946283" duration="97000" />
     </task>
+    <task id="LOCAL-00001" summary="Uploading updates...">
+      <created>1617176089021</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1617176089021</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,5 +221,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Uploading updates..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Uploading updates..." />
   </component>
 </project>

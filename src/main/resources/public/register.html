@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="fullscreen-bg">
+<html lang="en" xmlns:th class="fullscreen-bg">
 
 <head>
     <title>Login | OP-PUCMM</title>
@@ -32,22 +32,22 @@
                                                                alt="Klorofil Logo"></div>
                             <p class="lead">Sign Up</p>
                         </div>
-                        <form class="form-auth-small" action="" id="form">
+                        <form method="post" class="form-auth-small" action="/userRegister" id="form">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="firstName"placeholder="First Name" required>
+                                <input type="text" class="form-control" name="fullName" id="firstName"placeholder="First Name" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="username" placeholder="Username" required>
+                                <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
                             </div>
                             <div class="form-group">
                                 <select name="role" id="role" placeholder="role" class="form-control" aria-required="true" required>
-                                    <option value="">Role</option>
-                                    <option value="hobbyist">Administrador</option>
-                                    <option value="professional_developer">Empleado</option>
-                                    <option value="student">Voluntario</option>
+                                    <option name="role" value="">Role</option>
+                                    <option name="role" value="Administrador">Administrador</option>
+                                    <option name="role" value="Empleado">Empleado</option>
+                                    <option name="role" value="Voluntario">Voluntario</option>
                                 </select>
                             </div>
                             <div class="form-group clearfix">
@@ -56,13 +56,17 @@
                                     <span>Remember me</span>
                                 </label>
                             </div>
+                            <div class="col-md-12">
+                                <br>
+                                <h6 DIV ALIGN=center th:text="${Error}" style="color:#ff0000"></h6>
+                            </div>
                             <button type="submit" class="btn btn-primary btn-lg btn-block">CREATE ACCOUNT</button>
                             <p></p>
                             <!-- START LOGIN ENTERING -->
                             <div class="panel panel-headline">
                                 <div class="panel-heading">
                                     <span>Already have an account?&nbsp;</span>
-                                    <a class="btn btn-sm btn-alt" href="../public/page-login.html">Log in</a>
+                                    <a class="btn btn-sm btn-alt" href="page-login.html">Log in</a>
                                 </div>
                             </div>
                             <!-- END LOGIN ENTERING -->

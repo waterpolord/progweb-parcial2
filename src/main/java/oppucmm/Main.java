@@ -1,6 +1,8 @@
 package oppucmm;
 
 import io.javalin.Javalin;
+import oppucmm.controllers.FormController;
+import oppucmm.controllers.UserController;
 import oppucmm.controllers.mainController;
 import oppucmm.controllers.Controller;
 import oppucmm.services.connect.DataBaseServices;
@@ -27,7 +29,12 @@ public class Main {
         }).start(7000);
         //Create fake user
         Controller.getInstance().createFakeUser();
-        new mainController(app).aplicarRutas();
+
+        app.get("/",ctx -> {
+            ctx.redirect("formularios");
+        });
+        new UserController(app).aplicarRutas();
+        new FormController(app).aplicarRutas();
     }
     public static String getModoConexion() {
         return modoConexion;

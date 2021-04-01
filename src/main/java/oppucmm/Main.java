@@ -2,8 +2,8 @@ package oppucmm;
 
 import io.javalin.Javalin;
 import oppucmm.controllers.mainController;
-import oppucmm.encapsulations.Controller;
-import oppucmm.services.DataBaseServices;
+import oppucmm.controllers.Controller;
+import oppucmm.services.connect.DataBaseServices;
 
 import java.sql.SQLException;
 

@@ -1,16 +1,11 @@
 package oppucmm.controllers;
 
 import io.javalin.Javalin;
-import oppucmm.encapsulations.Controller;
-import oppucmm.encapsulations.User;
-import oppucmm.utilities.ControladorBase;
-import oppucmm.utilities.RolesApp;
+import oppucmm.models.User;
+import oppucmm.models.RoleApp;
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -37,6 +32,7 @@ public class mainController extends ControladorBase {
                 });
                 get("/", ctx -> {
                     Map<String, Object> modelo = new HashMap<>();
+                    // aqui van los formularios
                     ctx.render("public/index.html", modelo);
                 });
             });
@@ -69,11 +65,11 @@ public class mainController extends ControladorBase {
             User aux = new User(username, fullNmae, password);
             if(rol!=null){
                 if(rol.matches("Administrador"))
-                    aux.setRolesList(Set.of(RolesApp.ROLE_ADMIN));
+                    aux.setRolesList(Set.of(RoleApp.ROLE_ADMIN));
                 if(rol.matches("Empleado"))
-                    aux.setRolesList(Set.of(RolesApp.ROLE_EMPPLEADO));
+                    aux.setRolesList(Set.of(RoleApp.ROLE_EMPLEADO));
                 else{
-                    aux.setRolesList(Set.of(RolesApp.ROLES_VOLUNTARIO));
+                    aux.setRolesList(Set.of(RoleApp.ROLE_VOLUNTARIO));
                 }
                 if(Controller.getInstance().getUserById(username)==null){
                     Controller.getInstance().addUser(aux);

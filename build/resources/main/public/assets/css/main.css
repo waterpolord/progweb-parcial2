@@ -3,7 +3,7 @@ html {
   min-height: 100%; }
 
 body {
-  background-color: #F3F5F8;
+  background-color: #f3f5f8;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 15px;
   color: #676a6d; }
@@ -628,7 +628,9 @@ fieldset[disabled] .btn {
     .panel .panel-heading button {
       padding: 0;
       margin-left: 5px;
+      /*
       background-color: transparent;
+      */
       border: none;
       outline: none; }
       .panel .panel-heading button i {

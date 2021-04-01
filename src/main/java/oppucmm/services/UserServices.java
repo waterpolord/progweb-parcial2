@@ -1,7 +1,8 @@
 package oppucmm.services;
 
-import oppucmm.encapsulations.User;
+import oppucmm.models.User;
+import oppucmm.services.connect.DataBaseRepository;
 
-public class UserServices extends ManejadorBD<User>{
+public class UserServices extends DataBaseRepository<User> {
     public UserServices() { super(User.class); }
 }

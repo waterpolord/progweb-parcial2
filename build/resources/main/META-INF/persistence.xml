@@ -6,7 +6,7 @@
     <!--Unidad de persistencias. Se pueden tener mas de una.-->
     <persistence-unit name="persistenceUnit" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>oppucmm.encapsulations.User</class>
+        <class>oppucmm.models.User</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/OPP1" />
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />

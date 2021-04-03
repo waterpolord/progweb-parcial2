@@ -1,9 +1,11 @@
 package oppucmm;
 
 import io.javalin.Javalin;
+import io.javalin.core.util.RouteOverviewPlugin;
+import io.javalin.plugin.rendering.JavalinRenderer;
+import io.javalin.plugin.rendering.template.JavalinThymeleaf;
 import oppucmm.controllers.FormController;
 import oppucmm.controllers.UserController;
-import oppucmm.controllers.mainController;
 import oppucmm.controllers.Controller;
 import oppucmm.services.connect.DataBaseServices;
 
@@ -23,9 +25,15 @@ public class Main {
             DataBaseServices.getInstance().InciarBD();
         }
         //Creando la instancia del servidor.
-        Javalin app = Javalin.create(config ->{
+        /*Javalin app = Javalin.create(config ->{
             config.addStaticFiles("/public");
             config.enableCorsForAllOrigins();
+        }).start(7000);*/
+        Javalin app = Javalin.create(config -> {
+            config.addStaticFiles("/public");
+            config.registerPlugin(new RouteOverviewPlugin("/rutas"));
+            config.enableCorsForAllOrigins();
+            JavalinRenderer.register(JavalinThymeleaf.INSTANCE, ".html");
         }).start(7000);
         //Create fake user
         Controller.getInstance().createFakeUser();

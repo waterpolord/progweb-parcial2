@@ -14,8 +14,8 @@ oppucmm/controllers/OpPucmmException.java
  oppucmm.controllers.OpPucmmException
 oppucmm/controllers/ControladorBase.java
  oppucmm.controllers.ControladorBase
-oppucmm/controllers/mainController.java
- oppucmm.controllers.mainController
+oppucmm/controllers/UserController.java
+ oppucmm.controllers.UserController
 oppucmm/services/FormService.java
  oppucmm.services.FormService
 oppucmm/models/Form.java

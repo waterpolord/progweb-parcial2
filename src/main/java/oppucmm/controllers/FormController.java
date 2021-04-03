@@ -15,7 +15,7 @@ public class FormController {
     private FormService formService = FormService.getInstance();
     private Javalin app;
     private Map<String, Object> model = new HashMap<>();
-
+    Boolean onUpdate = false;
     public FormController(Javalin app) {
         //super(app);
         this.app = app;
@@ -36,10 +36,16 @@ public class FormController {
 
                 });
                 get("/",ctx -> {
+
                     System.out.println("llego patron");
+                    if(onUpdate ){
+                        model.put("accion","/formularios/editar");
+                    }
+                    else {
+                        model.put("accion","/formularios/crear");
+                    }
                     model.put("forms",formService.explorarTodo());
-                    model.put("accion","/formularios/crear");
-                    model.put("save","GUARDAR FORMULARIO");
+
                     ctx.render("public/form.html",model);
                 });
 
@@ -63,15 +69,42 @@ public class FormController {
                     ctx.result("comming soon");
                 });
 
+                get("/editar/:id",ctx -> {
+                    Form form = formService.buscar(ctx.pathParam("id", Integer.class).get());
+                    model.put("form",form);
+                    //model.put("onEdit",true);
+                    model.put("accion", "/formularios/editar"+form.getId());
+                    // las rutas solo estan registradas en el sidebar y por tanto se debe llevar a esta
+                    onUpdate = true;
+                    ctx.redirect("/formularios");
+
+                    ctx.render("public/form.html",model);
+                });
+
                 post("/editar",ctx -> {
-                    System.out.println("llego patron");
-                    ctx.result("comming soon");
+                    Form form = new Form(ctx.formParam("name"),
+                            ctx.formParam("sector"),
+                            ctx.formParam("level")
+                    );
+                    Form old =(Form)model.get("form");
+
+                    old.setName(form.getName());
+                    old.setSector(form.getSector());
+                    old.setAcademicLevel(form.getAcademicLevel());
+                    formService.editar(old);
+                    onUpdate = false;
+                    /*model.put("form",null);
+                    model.put("forms",formService.explorarTodo());*/
+                    ctx.redirect("/formularios");
+                    ctx.render("public/form.html",model);
                 });
 
 
-                post("/eliminar",ctx -> {
-                    System.out.println("llego patron");
-                    ctx.result("comming soon");
+                get("/eliminar/:id",ctx -> {
+                    //Form form = formService.buscar(ctx.pathParam("id", Integer.class).get());
+                    formService.eliminar(ctx.pathParam("id", Integer.class).get());
+                    ctx.redirect("/formularios");
+                    ctx.render("public/form.html",model);
                 });
 
             });

@@ -36,7 +36,13 @@ footer {
   @media screen and (max-width: 767px) {
     .copyright {
       text-align: center;
-      position: relative !important; } }
+      position: relative !important; }
+    table th, table td {
+      padding: -0.375em;
+      text-align: center;
+    }
+  }
+
 
 /********************
  * LAYOUT
@@ -65,6 +71,31 @@ footer {
   position: relative;
   float: right;
   background-color: #f5f5fa; }
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+table tr {
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th, table td {
+  /*padding: .625em;*/
+  text-align: center;
+}
+
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
 
 #wrapper #sidebar-nav,
 #wrapper .main {
@@ -1005,7 +1036,7 @@ ul.activity-list > li {
     width: 58%;
     height: 100%;
     position: relative;
-    background-image: url("../../assets/img/login-bg.jpg");
+    background-image: url("../img/login-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover; }
     .auth-box .right:before {
@@ -1163,7 +1194,7 @@ ul.activity-list > li {
   .profile-header .profile-main {
     position: relative;
     padding: 20px;
-    background-image: url("../../assets/img/profile-bg.png");
+    background-image: url("../img/profile-bg.png");
     background-repeat: no-repeat;
     background-size: cover; }
   .profile-header .name {
@@ -1747,5 +1778,12 @@ ul.activity-timeline > li {
   .project-table > tbody > tr > td .avatar {
     width: 22px;
     border: 1px solid #CCC; }
+@media only screen and (min-width: 500px) {
+
+}
+
+@media only screen and (min-width: 850px){
+
+}
 
 /*# sourceMappingURL=main.css.map */

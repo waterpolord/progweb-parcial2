@@ -1,16 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a1380f5-c9b3-45cf-8c99-cdf2162b47ee" name="Default Changelist" comment="Parte visual del formulario">
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/parcial2_main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_30_2021_11_55_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_30_2021_11_55_AM__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/oppucmm/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/oppucmm/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/oppucmm/controllers/ExcepcionesControlador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/oppucmm/encapsulations/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/oppucmm/services/DataBaseServices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/oppucmm/services/UserServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/oppucmm/services/UserServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/oppucmm/utilities/ControladorBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oppucmm/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oppucmm/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oppucmm/controllers/ExcepcionesControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oppucmm/controllers/OpPucmmException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oppucmm/controllers/mainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oppucmm/controllers/mainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oppucmm/encapsulations/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oppucmm/controllers/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oppucmm/encapsulations/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oppucmm/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oppucmm/services/DataBaseServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oppucmm/services/connect/DataBaseServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oppucmm/services/ManejadorBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oppucmm/services/connect/DataBaseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oppucmm/services/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oppucmm/services/UserServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oppucmm/utilities/ControladorBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oppucmm/controllers/ControladorBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oppucmm/utilities/RolesApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oppucmm/models/RoleApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,9 +115,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/op/pucmm/eict" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -103,9 +149,7 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
@@ -161,7 +205,10 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="5a1380f5-c9b3-45cf-8c99-cdf2162b47ee" name="Default Changelist" comment="" />
@@ -173,6 +220,7 @@
       <workItem from="1617198813166" duration="4208000" />
       <workItem from="1617204921893" duration="11608000" />
       <workItem from="1617216946283" duration="4887000" />
+      <workItem from="1617242186529" duration="5775000" />
     </task>
     <task id="LOCAL-00001" summary="Uploading updates...">
       <created>1617176089021</created>
@@ -213,7 +261,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -234,5 +282,23 @@
     <MESSAGE value="Updating files" />
     <MESSAGE value="Parte visual del formulario" />
     <option name="LAST_COMMIT_MESSAGE" value="Parte visual del formulario" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1493" height="26" key="GridCell.Tab.0.bottom" timestamp="1617244429896">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="26" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617244429896" />
+    <state width="1493" height="26" key="GridCell.Tab.0.center" timestamp="1617244429896">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="26" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617244429896" />
+    <state width="1493" height="26" key="GridCell.Tab.0.left" timestamp="1617244429896">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="26" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617244429896" />
+    <state width="1493" height="26" key="GridCell.Tab.0.right" timestamp="1617244429896">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="26" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617244429896" />
   </component>
 </project>

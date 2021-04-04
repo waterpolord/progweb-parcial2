@@ -38,9 +38,12 @@ public class Main {
         //Create fake user
         Controller.getInstance().createFakeUser();
 
+        /*
         app.get("/",ctx -> {
             ctx.redirect("formularios");
         });
+
+         */
         new UserController(app).aplicarRutas();
         new FormController(app).aplicarRutas();
     }

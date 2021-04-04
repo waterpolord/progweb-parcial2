@@ -52,17 +52,6 @@
         /*   padding: 2em 0em; */
     }
 
-    .container2 {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        background-color: #FFF;
-        padding:  40px 0px;
-        width: 240px;
-    }
-
     h1 {
         text-align: left;
         color: #444;
@@ -77,20 +66,6 @@
         letter-spacing: 0.05em;
         font-size: 0.8em;
         margin: 0 0 2em;
-    }
-
-
-    .btn {
-        letter-spacing: 0.1em;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 45px;
-        max-width: 160px;
-        position: relative;
-        text-decoration: none;
-        text-transform: uppercase;
-        width: 100%;
     }
     .btn:hover {
         text-decoration: none;
@@ -114,19 +89,16 @@
         transition-duration: 0.4s;
     }
 
-    /* 文字1を上に */
     .effect04:hover{
 
         background-color: #000;
     }
 
-    /* HOVERしたら文字1を上に */
     .effect04:hover span{
         -webkit-transform: translateY(-400%) scale(-0.1,20);
         transform: translateY(-400%) scale(-0.1,20);
     }
 
-    /*文字2*/
     .effect04::before{
         content: attr(data-sm-link-text);
         color: #FFF;
@@ -138,7 +110,6 @@
         transform: translateY(500%) scale(-0.1,20);
     }
 
-    /* HOVERしたら文字2を上に */
     .effect04:hover::before{
         letter-spacing: 0.05em;
         -webkit-transform: translateY(0) scale(1,1);
@@ -207,7 +178,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a href="tables.html" class=""><i class="lnr lnr-dice"></i> <span>Maps</span></a></li>
+                    <li><a href="maps.html" class=""><i class="lnr lnr-dice"></i> <span>Maps</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -230,7 +201,7 @@
                             <div class="header">
                                 <p class="lead">Formulario de registro</p>
                             </div>
-                            <form method="post" class="form-auth-small" th:attr="action=${accion}" id="form">
+                            <form method="post" class="form-auth-small" th:attr="action=${accion}" name="form" id="form">
                                 <div class="form-group">
                                     <label class="fancy-checkbox">
                                         <span>Nombre completo</span>
@@ -259,6 +230,8 @@
                                         <option name="academicLevel" value="Doctorado">Doctorado</option>
                                     </select>
                                 </div>
+                                <input type="hidden" id="idEdit" name="idEdit" value="">
+
                                 <!--
                                                                 <button type="submit" th:text="GUARDAR FORMULARIO" class="btn btn-primary btn-lg btn-block">GUARDAR FORMULARIO</button>
                                 -->
@@ -273,6 +246,8 @@
                                     <div class="panel panel-headline">
                                         <div class="panel-heading">
                                             <h3 class="panel-title">Formularios recolectados</h3>
+                                            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search...">
+
                                             <div class="table-responsive">
                                                 <table class="table" id="dataTable">
                                                     <thead>
@@ -325,6 +300,14 @@
 </div>
 <!-- END MAIN -->
 <!-- END WRAPPER -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+<script src="assets/vendor/chartist/js/chartist.min.js"></script>
+<script src="assets/scripts/klorofil-common.js"></script>
+<!--<script src="assets/scripts/editDelete.js"></script>--->
+</body>
 <!-- Javascript -->
 <script>
     $(document).ready(function ($) {
@@ -336,18 +319,10 @@
             var sector = curRow.find('td:eq(2)').text();
             var role = curRow.find('td:eq(3)').text();
             document.form.idEdit.value = id;
-            document.form.fullName.value = nombre;
+            document.form.name.value = nombre;
             document.form.sector.value = sector;
-            document.form.role.value = role;
+            document.form.level.value = role;
         });
     });
 </script>
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<script src="assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
-<script src="assets/vendor/chartist/js/chartist.min.js"></script>
-<script src="assets/scripts/klorofil-common.js"></script>
-<!--<script src="assets/scripts/editDelete.js"></script>--->
-</body>
 </html>

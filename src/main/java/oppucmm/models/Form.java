@@ -8,15 +8,18 @@ public class Form implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     @Column(length = 30)
     private String name;
-
     @Column(length = 30)
     private String sector;
-
     @Column(length = 30)
     private String academicLevel;
+    //New
+    @OneToOne
+    private User user;
+    //New
+    @Embedded
+    private Location location;
 /*
     @OneToOne()
     private Location location;*/
@@ -28,6 +31,14 @@ public class Form implements Serializable {
         this.name = name;
         this.sector = sector;
         this.academicLevel = academicLevel;
+    }
+    /*To create form*/
+    public Form(String name, String sector, String academicLevel, User user, Location location) {
+        this.name = name;
+        this.sector = sector;
+        this.academicLevel = academicLevel;
+        this.user = user;
+        this.location = location;
     }
 
     public int getId() {
@@ -60,5 +71,20 @@ public class Form implements Serializable {
 
     public void setAcademicLevel(String academicLevel) {
         this.academicLevel = academicLevel;
+    }
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 }

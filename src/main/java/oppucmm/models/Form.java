@@ -1,9 +1,10 @@
 package oppucmm.models;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Form {
+public class Form implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

@@ -18,7 +18,24 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
     <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+
+
+    <style>
+        .panel2 .panel-heading2, .panel2 .panel-body2 {
+            padding-left: 3px;
+            padding-right: 3px;
+            width: 100px;
+        }
+        .card-body {
+            flex: 1 1 auto;
+            min-height: 1px;
+            padding: 1.25rem;
+        }
+
+
+    </style>
 </head>
+
 
 <body>
 <!-- WRAPPER -->
@@ -134,87 +151,50 @@
                                         <option name="role" value="Voluntario">Voluntario</option>
                                     </select>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">REGISTRAR USUARIO
-                                </button>
-                            </form>
-                        </div>
-                        <!--END FORMULARIO--->
-                        <!--================Cart Area =================-->
-                        <div class="panel-heading">
-                            <h3 class="panel-title">LISTADO DE USUARIOS</h3>
-
-                            <div class="cart_area">
-                                <div class="container">
-                                    <div class="cart_inner">
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">REGISTRAR USUARIO
+                                    </button>
+                                </div>
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">LISTADO DE USUARIOS</h3>
+                                    <div class="card-body">
                                         <div class="table-responsive">
-                                            <table class="table">
+                                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                                 <thead>
                                                 <tr>
-                                                    <th scope="col">Product</th>
-                                                    <th scope="col">Price</th>
-                                                    <th scope="col">Quantity</th>
-                                                    <th scope="col">Total</th>
+                                                    <th>NOMBRE</th>
+                                                    <th>USUARIO</th>
+                                                    <th>ROL</th>
+                                                    <th>ACCION</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
+                                                <tr th:each="u1 : ${listUser}">
+                                                    form
+                                                    <td th:text="${u1.fullName}"></td>
+                                                    <td th:text="${u1.username}"></td>
+                                                    <td th:text="${u1.rolesList}"></td>
                                                     <td>
-                                                        <div class="media">
-                                                            <div class="d-flex">
-                                                                <img src="img/cart/cart1.png" alt="">
-                                                            </div>
-                                                            <div class="media-body">
-                                                                <p>Minimalistic shop for multipurpose use</p>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <h5>$360.00</h5>
-                                                    </td>
-                                                    <td>
-                                                    </td>
-                                                    <td>
-                                                        <h5>$720.00</h5>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="media">
-                                                            <div class="d-flex">
-                                                                <img src="img/cart/cart2.png" alt="">
-                                                            </div>
-                                                            <div class="media-body">
-                                                                <p>Minimalistic shop for multipurpose use</p>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <h5>$360.00</h5>
-                                                    </td>
-                                                    <td>
-                                                    </td>
-                                                    <td>
-                                                        <h5>$720.00</h5>
+
                                                     </td>
                                                 </tr>
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
-
                                 </div>
-                            </div>
+                            </form>
                         </div>
+                        <!--END FORMULARIO--->
+                        <!--================Cart Area =================-->
                     </div>
                 </div>
-
                 <!---<button type="submit" class="btn btn-primary btn-lg btn-block">REGISTRAR USUARIO</button>-->
                 <!-- END OVERVIEW -->
             </div>
         </div>
         <!-- END MAIN CONTENT -->
     </div>
-
     <div class="clearfix"></div>
     <footer>
         <div class="container-fluid">

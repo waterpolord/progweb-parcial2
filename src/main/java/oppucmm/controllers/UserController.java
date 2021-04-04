@@ -35,35 +35,29 @@ public class UserController {
                         ctx.redirect("/login");
                     }
                 });
-            });
-            path("/user", () -> {
                 before("/", ctx -> {
                     if (ctx.sessionAttribute("usuario") == null) {
                         ctx.redirect("/login");
                     }
                 });
-
-                get("/", ctx -> {
-                    //aqui debe ir la lista de usuarios
-                });
                 get("/userRegister", ctx -> {
                     // esta ruta deberia ser la que esta afuera con el login
                     Map<String, Object> modelo = new HashMap<>();
-                    //List<User> auxUser = UserServices.getInstance().explorarTodo();
-                    //modelo.put("listUser",auxUser);
-                    ctx.render("public/registerHome.html", modelo);
+                    List<User> auxUser = UserServices.getInstance().explorarTodo();
+                    modelo.put("listUser",auxUser);
+                    ctx.render("public/register.html", modelo);
                 });
             });
         });
         app.post("/userRegister", ctx -> {
             Map<String, Object> modelo = new HashMap<>();
 
-            String fullNmae = ctx.formParam("fullName");
+            String fullName = ctx.formParam("fullName");
             String username = ctx.formParam("username");
             String password = ctx.formParam("password");
             String rol = ctx.formParam("role");
             System.out.println("el valor es> " + ctx.formParam("role"));
-            User aux = new User(username, fullNmae, password);
+            User aux = new User(username, fullName, password);
             if (rol != null) {
                 if (rol.matches("Administrador"))
                     aux.setRolesList(Set.of(RoleApp.ROLE_ADMIN));
@@ -74,7 +68,7 @@ public class UserController {
                 }
                 if (Controller.getInstance().getUserById(username) == null) {
                     Controller.getInstance().addUser(aux);
-                    ctx.render("public/form.html", modelo);
+                    ctx.render("public/register.html", modelo);
                     System.out.println("CREADO");
                 } else {
                     modelo.put("Error", "El nombre de usuario ya existe. Intentelo de nuevo! ");

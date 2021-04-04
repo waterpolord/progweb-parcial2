@@ -4,8 +4,8 @@ oppucmm/models/RoleApp.java
  oppucmm.models.RoleApp
 oppucmm/controllers/ControladorBase.java
  oppucmm.controllers.ControladorBase
-oppucmm/controllers/FormController.java
- oppucmm.controllers.FormController
+oppucmm/controllers/UserController.java
+ oppucmm.controllers.UserController
 oppucmm/services/connect/DataBaseServices.java
  oppucmm.services.connect.DataBaseServices
 oppucmm/controllers/OpPucmmException.java
@@ -22,5 +22,5 @@ oppucmm/services/FormService.java
  oppucmm.services.FormService
 oppucmm/Main.java
  oppucmm.Main
-oppucmm/controllers/UserController.java
- oppucmm.controllers.UserController
+oppucmm/controllers/FormController.java
+ oppucmm.controllers.FormController

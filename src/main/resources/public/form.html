@@ -18,7 +18,134 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
     <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html,
+    body {
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+    }
+
+    body {
+        background: #FFF;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 400;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        /*   padding: 2em 0em; */
+    }
+
+    .container2 {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        background-color: #FFF;
+        padding:  40px 0px;
+        width: 240px;
+    }
+
+    h1 {
+        text-align: left;
+        color: #444;
+        letter-spacing: 0.05em;
+        margin: 0 0 0.4em;
+        font-size: 1em;
+    }
+
+    p {
+        text-align: left;
+        color: #444;
+        letter-spacing: 0.05em;
+        font-size: 0.8em;
+        margin: 0 0 2em;
+    }
+
+
+    .btn {
+        letter-spacing: 0.1em;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 45px;
+        max-width: 160px;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: 100%;
+    }
+    .btn:hover {
+        text-decoration: none;
+    }
+
+    /*btn_background*/
+    .effect04 {
+        --uismLinkDisplay: var(--smLinkDisplay, inline-flex);
+        display: var(--uismLinkDisplay);
+        color: #000;
+        outline: solid  2px #000;
+        position: relative;
+        transition-duration: 0.4s;
+        overflow: hidden;
+    }
+
+    .effect04::before,
+    .effect04 span{
+        margin: 0 auto;
+        transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+        transition-duration: 0.4s;
+    }
+
+    /* 文字1を上に */
+    .effect04:hover{
+
+        background-color: #000;
+    }
+
+    /* HOVERしたら文字1を上に */
+    .effect04:hover span{
+        -webkit-transform: translateY(-400%) scale(-0.1,20);
+        transform: translateY(-400%) scale(-0.1,20);
+    }
+
+    /*文字2*/
+    .effect04::before{
+        content: attr(data-sm-link-text);
+        color: #FFF;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        -webkit-transform: translateY(500%) scale(-0.1,20);
+        transform: translateY(500%) scale(-0.1,20);
+    }
+
+    /* HOVERしたら文字2を上に */
+    .effect04:hover::before{
+        letter-spacing: 0.05em;
+        -webkit-transform: translateY(0) scale(1,1);
+        transform: translateY(0) scale(1,1);
+    }
+
+</style>
 
 <body>
 <!-- WRAPPER -->
@@ -64,8 +191,10 @@
         <div class="sidebar-scroll">
             <nav>
                 <ul class="nav">
-                    <li><a href="/formularios/maps" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-                    <li><a href="/formularios" class="active"><i class="lnr lnr-file-empty"></i> <span>Formularios</span></a></li>
+                    <li><a href="/formularios/maps" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a>
+                    </li>
+                    <li><a href="/formularios" class="active"><i class="lnr lnr-file-empty"></i>
+                        <span>Formularios</span></a></li>
                     <li><a href="panels.html" class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
                     <li>
                         <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i>
@@ -74,15 +203,16 @@
                             <ul class="nav">
                                 <li><a href="page-profile.html" class="">Profile</a></li>
                                 <li><a href="page-login.html" class="">Login</a></li>
-                                <li><a href="user/userRegister" class="">User Register</a></li>
+                                <li><a href="/userRegister" class="">User Register</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li><a href="tables.html" class=""><i class="lnr lnr-dice"></i> <span>Tables</span></a></li>
+                    <li><a href="tables.html" class=""><i class="lnr lnr-dice"></i> <span>Maps</span></a></li>
                 </ul>
             </nav>
         </div>
     </div>
+
     <!-- END LEFT SIDEBAR -->
     <!-- MAIN -->
     <div class="main">
@@ -105,20 +235,23 @@
                                     <label class="fancy-checkbox">
                                         <span>Nombre completo</span>
                                     </label>
-                                    <input type="text" class="form-control" name="name" id="fullName" placeholder="Nombre" required>
+                                    <input type="text" class="form-control" name="name" id="fullName"
+                                           placeholder="Nombre" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="fancy-checkbox">
                                         <span>Sector</span>
                                     </label>
-                                    <input type="text" class="form-control" name="sector" id="sector" placeholder="Sector" required>
+                                    <input type="text" class="form-control" name="sector" id="sector"
+                                           placeholder="Sector" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="fancy-checkbox">
                                         <span>Academic Level</span>
                                     </label>
-                                    <select name="level" id="role" placeholder="level" class="form-control" aria-required="true" required>
-
+                                    <select name="level" id="academicLevel" placeholder="level" class="form-control"
+                                            aria-required="true" required>
+                                        <option selected> Nivel Academico</option>
                                         <option name="academicLevel" value="Basico">Basico</option>
                                         <option name="academicLevel" value="Medio">Medio</option>
                                         <option name="academicLevel" value="Grado">Grado</option>
@@ -126,17 +259,55 @@
                                         <option name="academicLevel" value="Doctorado">Doctorado</option>
                                     </select>
                                 </div>
-<!--
-                                <button type="submit" th:text="GUARDAR FORMULARIO" class="btn btn-primary btn-lg btn-block">GUARDAR FORMULARIO</button>
--->
+                                <!--
+                                                                <button type="submit" th:text="GUARDAR FORMULARIO" class="btn btn-primary btn-lg btn-block">GUARDAR FORMULARIO</button>
+                                -->
+                                <div class="buttons">
+                                        <button type="submit">
+                                            <a class="btn effect04" data-sm-link-text="CLICK" target="_blank"><span>GUARDAR</span></a>
+                                        </button>
+                                </div>
+                                <!-- START MAIN CONTENT 2 -->
+                                <div class="main-content">
+                                    <!-- OVERVIEW -->
+                                    <div class="panel panel-headline">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Formularios recolectados</h3>
+                                            <div class="table-responsive">
+                                                <table class="table" id="dataTable">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>NOMBRE COMPLETO</th>
+                                                        <th>SECTOR</th>
+                                                        <th>NIVEL ACADEMICO</th>
+                                                        <th>ACCION</th>
 
-                                <button type="submit" class="btn btn-primary btn-lg bg-primary">GUARDAR FORMULARIO</button>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr th:each="aux : ${forms}">
+                                                        <td th:text="${aux.id}"></td>
+                                                        <td th:text="${aux.name}"></td>
+                                                        <td th:text="${aux.sector}"></td>
+                                                        <td th:text="${aux.academicLevel}"></td>
+                                                        <td>
+                                                            <a id='edit' th:href="'formularios/editar/'+${aux.id}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                            <a id='delete' th:href="'formularios/eliminar/'+${aux.id}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <!-- END BASIC TABLE -->
+                                    </div>
+                                </div>
 
                             </form>
-<!--
-                            <button type="submit" class="btn btn-primary" th:text="${save}">GUARDAR FORMULARIO</button>
--->
-
+                            <!--
+                                                        <button type="submit" class="btn btn-primary" th:text="${save}">GUARDAR FORMULARIO</button>
+                            -->
                         </div>
                         <!--END FORMULARIO--->
                     </div>
@@ -145,69 +316,38 @@
             </div>
         </div>
         <!-- END MAIN CONTENT -->
-        <!-- START MAIN CONTENT 2 -->
-        <div class="main-content">
-            <div class="container-fluid">
-                <!-- OVERVIEW -->
-                <div class="panel panel-headline">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">LISTADO DE USUARIOS</h3>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <!-- BASIC TABLE -->
-                                    <div class="panel">
-                                        <div class="panel-body">
-                                            <table class="table">
-                                                <thead>
-                                                <tr>
 
-                                                    <th>Nombre completo</th>
-                                                    <th>Sector</th>
-                                                    <th>Nivel academico</th>
-
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr th:each="aux : ${forms}">
-                                                    <td th:text="${aux.name}">Nombre</td>
-                                                    <td th:text="${aux.sector}">Precio</td>
-                                                    <td th:text="${aux.academicLevel}">Cantidad</td>
-                                                    <td>
-                                                        <a th:hidden="!${logged}" th:text="Editar" th:href="'formularios/editar/'+${aux.id}" th class="btn btn-secondary btn-sm"/> |
-                                                        <a th:hidden="!${logged}" th:text="Eliminar" th:href="'/formularios/eliminar/'+${aux.id}" th class="btn btn-danger btn-sm"/> |
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <!-- END BASIC TABLE -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END OVERVIEW -->
-            </div>
-        </div>
-        <!-- END MAIN CONTENT -->
     </div>
-    <!-- END MAIN -->
-    <div class="clearfix"></div>
-    <footer>
-        <div class="container-fluid">
-            </a>All Rights Reserved.</a>
-        </div>
-    </footer>
+    <!-- END OVERVIEW -->
 </div>
+</div>
+<!-- END MAIN CONTENT -->
+</div>
+<!-- END MAIN -->
 <!-- END WRAPPER -->
 <!-- Javascript -->
+<script>
+    $(document).ready(function ($) {
+        var array = [];
+        $('#dataTable tbody').on('click', '#edit', function () {
+            var curRow = $(this).closest('tr');
+            var id = Row.find('td:eq(0)').text();
+            var nombre = curRow.find('td:eq(1)').text();
+            var sector = curRow.find('td:eq(2)').text();
+            var role = curRow.find('td:eq(3)').text();
+            document.form.idEdit.value = id;
+            document.form.fullName.value = nombre;
+            document.form.sector.value = sector;
+            document.form.role.value = role;
+        });
+    });
+</script>
 <script src="assets/vendor/jquery/jquery.min.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <script src="assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
 <script src="assets/vendor/chartist/js/chartist.min.js"></script>
 <script src="assets/scripts/klorofil-common.js"></script>
+<!--<script src="assets/scripts/editDelete.js"></script>--->
 </body>
 </html>

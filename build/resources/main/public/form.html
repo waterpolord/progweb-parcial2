@@ -217,6 +217,51 @@
                 <!-- END OVERVIEW -->
             </div>
         </div>
+
+        <!-- END MAIN CONTENT -->
+        <!-- START MAIN CONTENT 2 -->
+        <div class="main-content">
+            <div class="container-fluid">
+                <!-- OVERVIEW -->
+                <div class="panel panel-headline">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-uppercase">Formularios registrados</h3>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <!-- BASIC TABLE -->
+                                    <div class="panel">
+                                        <div class="panel-body">
+                                            <table class="table-responsive">
+                                                <thead>
+                                                <tr>
+
+                                                    <th scope="col" >Nombre completo</th>
+                                                    <th scope="col">Sector</th>
+                                                    <th scope="col">Nivel academico</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr scope="row" th:each="aux : ${forms}">
+                                                    <td th:text="${aux.name}">Nombre</td>
+                                                    <td th:text="${aux.sector}">Precio</td>
+                                                    <td th:text="${aux.academicLevel}">Cantidad</td>
+                                                    <td>
+                                                    <!--    <a th:hidden="!${logged}" th:href="'formularios/editar/'+${aux.id}" th class="btn btn-secondary lnr lnr-pencil "/>
+
+                                                        <a th:hidden="!${logged}" th:text="Eliminar" th:href="'/formularios/eliminar/'+${aux.id}" th class="btn btn-danger lnr lnr-trash"/>
+                                                    -->
+                                                        <a th:href="'formularios/editar/'+${aux.id}" class=""><i class="lnr lnr-pencil"></i> </a>
+                                                        <a th:href="'/formularios/eliminar/'+${aux.id}" style="color: #ff0000" class=""><i class="lnr lnr-trash"></i> </a>
+
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- END BASIC TABLE -->
+                                    </div>
+
         <!-- Edit Modal HTML --> <!--Editar Formulario-->
         <div id="editModal" class="modal fade">
             <div class="modal-dialog">

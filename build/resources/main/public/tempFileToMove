@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="public/plantilla.html::head">
+</head>
+
+<body>
+<!-- WRAPPER -->
+<div id="wrapper">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-default navbar-fixed-top" th:replace="public/plantilla.html::header">
+
+    </nav>
+    <!-- END NAVBAR -->
+    <!-- LEFT SIDEBAR -->
+    <div id="sidebar-nav" class="sidebar" th:replace="public/plantilla.html::sidebar">
+
+    </div>
+    <!-- END LEFT SIDEBAR -->
+    <!-- MAIN -->
+    <div class="main">
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="container-fluid">
+                <!-- OVERVIEW -->
+                <div class="panel panel-headline">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">OFICINA DE PLANEAMIENTO</h3>
+                        <p class="panel-subtitle">Pontificia Universidad Catolica Madre y Maestra</p>
+                        <!--PONER DIV AQUI O TEMPLATE PARA EL FORMULARIO--->
+                        <!--START FORMULARIO--->
+                        <div class="content">
+                            <div class="header">
+                                <p class="lead">Formulario de registro</p>
+                            </div>
+                            <form method="post" class="form-auth-small" th:attr="action=${accion}" id="form">
+                                <div class="form-group">
+                                    <label class="fancy-checkbox">
+                                        <span>Nombre completo</span>
+                                    </label>
+                                    <input th:value="${form} ? ${form.name} : ''" type="text" class="form-control" name="name" id="fullName" placeholder="Nombre" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="fancy-checkbox">
+                                        <span>Sector</span>
+                                    </label>
+                                    <input th:value="${form} ? ${form.sector} : ''" type="text" class="form-control" name="sector" id="sector" placeholder="Sector" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="fancy-checkbox">
+                                        <span>Academic Level</span>
+                                    </label>
+                                    <select th:value="${form} ? ${form.academicLevel} : ''" name="level" id="role" placeholder="level" class="form-control" aria-required="true" required>
+
+                                        <option name="academicLevel" value="Basico">Basico</option>
+                                        <option name="academicLevel" value="Medio">Medio</option>
+                                        <option name="academicLevel" value="Grado">Grado</option>
+                                        <option name="academicLevel" value="Maestria">Maestria</option>
+                                        <option name="academicLevel" value="Doctorado">Doctorado</option>
+                                    </select>
+                                </div>
+<!--
+                                <button type="submit" th:text="GUARDAR FORMULARIO" class="btn btn-primary btn-lg btn-block">GUARDAR FORMULARIO</button>
+-->
+
+                                <button type="submit" th:text="${form}? 'Editar':'Guardar' " class="btn btn-primary btn-lg bg-primary text-uppercase" ></button>
+
+                            </form>
+<!--
+                            <button type="submit" class="btn btn-primary" th:text="${save}">GUARDAR FORMULARIO</button>
+-->
+
+                        </div>
+                        <!--END FORMULARIO--->
+                    </div>
+                </div>
+                <!-- END OVERVIEW -->
+            </div>
+        </div>
+        <!-- END MAIN CONTENT -->
+        <!-- START MAIN CONTENT 2 -->
+        <div class="main-content">
+            <div class="container-fluid">
+                <!-- OVERVIEW -->
+                <div class="panel panel-headline">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-uppercase">Formularios registrados</h3>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <!-- BASIC TABLE -->
+                                    <div class="panel">
+                                        <div class="panel-body">
+                                            <table class="table-responsive">
+                                                <thead>
+                                                <tr>
+
+                                                    <th scope="col" >Nombre completo</th>
+                                                    <th scope="col">Sector</th>
+                                                    <th scope="col">Nivel academico</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr scope="row" th:each="aux : ${forms}">
+                                                    <td th:text="${aux.name}">Nombre</td>
+                                                    <td th:text="${aux.sector}">Precio</td>
+                                                    <td th:text="${aux.academicLevel}">Cantidad</td>
+                                                    <td>
+                                                    <!--    <a th:hidden="!${logged}" th:href="'formularios/editar/'+${aux.id}" th class="btn btn-secondary lnr lnr-pencil "/>
+
+                                                        <a th:hidden="!${logged}" th:text="Eliminar" th:href="'/formularios/eliminar/'+${aux.id}" th class="btn btn-danger lnr lnr-trash"/>
+                                                    -->
+                                                        <a th:href="'formularios/editar/'+${aux.id}" class=""><i class="lnr lnr-pencil"></i> </a>
+                                                        <a th:href="'/formularios/eliminar/'+${aux.id}" style="color: red" class=""><i class="lnr lnr-trash"></i> </a>
+
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- END BASIC TABLE -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END OVERVIEW -->
+            </div>
+        </div>
+        <!-- END MAIN CONTENT -->
+    </div>
+    <!-- END MAIN -->
+    <div class="clearfix"></div>
+    <footer>
+        <div class="container-fluid">
+            </a>All Rights Reserved.</a>
+        </div>
+    </footer>
+</div>
+<!-- END WRAPPER -->
+<!-- Javascript -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+<script src="assets/vendor/chartist/js/chartist.min.js"></script>
+<script src="assets/scripts/klorofil-common.js"></script>
+</body>
+</html>

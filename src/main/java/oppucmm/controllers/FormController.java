@@ -2,12 +2,11 @@ package oppucmm.controllers;
 
 import io.javalin.Javalin;
 import oppucmm.models.Form;
+import oppucmm.models.User;
 import oppucmm.services.FormService;
 
 import java.io.IOException;
-import java.util.Base64;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import static io.javalin.apibuilder.ApiBuilder.*;
 
@@ -17,10 +16,10 @@ public class FormController {
     private Map<String, Object> model = new HashMap<>();
     Boolean onUpdate = false;
     public FormController(Javalin app) {
+
         //super(app);
         this.app = app;
     }
-
     //@Override
     public void aplicarRutas() {
         app.routes(() -> {
@@ -62,8 +61,6 @@ public class FormController {
                     ctx.redirect("/formularios");
 
                 });
-
-
                 post("/maps",ctx -> {
                     System.out.println("llego patron");
                     ctx.result("comming soon");
@@ -109,5 +106,14 @@ public class FormController {
 
             });
         });
+    }
+    private List<Form> getFormByUser(List<Form> servicioFormulario, User user) {
+        List<Form> list = new ArrayList<Form>();
+        for (Form f: servicioFormulario) {
+            if (f.getUser().equals(user)){
+                list.add(f);
+            }
+        }
+        return list;
     }
 }

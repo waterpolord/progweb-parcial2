@@ -37,10 +37,9 @@ public class Main {
         }).start(7000);
         //Create fake user
         Controller.getInstance().createFakeUser();
+        //Create fake form
+        Controller.getInstance().createFakeForm();
 
-        app.get("/",ctx -> {
-            ctx.redirect("formularios");
-        });
         new UserController(app).aplicarRutas();
         new FormController(app).aplicarRutas();
     }

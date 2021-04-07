@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DataBaseServices {
-    private String URL = "jdbc:h2:tcp://localhost/~/OPP1";
+    private String URL = "jdbc:h2:tcp://localhost/~/OPP3";
     private static DataBaseServices conexionBD;
     private static Server tcp;
     private static Server webServer;
@@ -23,7 +23,7 @@ public class DataBaseServices {
     }
 
     public static void InciarBD() throws SQLException {
-        tcp = Server.createTcpServer("-tcpPort", "9092", "-tcpAllowOthers", "-tcpDaemon", "-ifNotExists").start();//sube eL modo servidor H2
+        tcp = Server.createTcpServer("-tcpPort", "9092", "-tcpAllowOthers", "-tcpDaemon", "-ifNotExists").start();
         String status = Server.createWebServer( "-webPort", "9091", "-webAllowOthers", "-webDaemon").start().getStatus();
         System.out.println("Status Web: "+status);
 

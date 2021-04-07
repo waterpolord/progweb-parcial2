@@ -34,7 +34,7 @@
                         </div>
                         <form method="post" class="form-auth-small" action="/userRegister" id="form">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="fullName" id="firstName"placeholder="First Name" required>
+                                <input type="text" class="form-control" name="fullName" id="firstName"placeholder="Full Name" required>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
@@ -59,6 +59,8 @@
                             <div class="col-md-12">
                                 <br>
                                 <h6 DIV ALIGN=center th:text="${Error}" style="color:#ff0000"></h6>
+                                <h6 DIV ALIGN=center th:text="${Success}" style="color:#00A0F0"></h6>
+
                             </div>
                             <button type="submit" class="btn btn-primary btn-lg btn-block">CREATE ACCOUNT</button>
                             <p></p>

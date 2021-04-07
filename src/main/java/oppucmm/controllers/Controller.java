@@ -1,6 +1,8 @@
 package oppucmm.controllers;
 
+import oppucmm.models.Form;
 import oppucmm.models.User;
+import oppucmm.services.FormService;
 import oppucmm.services.UserServices;
 import oppucmm.models.RoleApp;
 
@@ -29,23 +31,17 @@ public class Controller {
     }
     /*Create fake user by default*/
     public void createFakeUser(){
-        if(s1.buscar("admin") == null){
-            s1.crear(new User("admin","admin","admin", Set.of(RoleApp.ROLE_ADMIN)));
-        }
+        User u1 = new User("admin","admin","admin", Set.of(RoleApp.ROLE_ADMIN));
+        UserServices.getInstance().editar(u1);
+    }
+    /*Create fake form by default*/
+    public void createFakeForm(){
+        Form f1 = new Form("Samuel Peña","Santiago","Grado");
+        FormService.getInstance().crear(f1);
     }
 
     public User getUserById(String user) {
         return s1.buscar(user);
     }
 
-    public User userAuthenticator(String username, String password) {
-        User u1 = getUserById(username);
-        if(u1!=null){
-            if(!u1.getPassword().equals(password)){
-                System.out.println("No se pudo  autentificar el usuario de forma correcta! \n");
-                return null;
-            }
-        }
-        return u1;
-    }
 }

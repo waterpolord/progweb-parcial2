@@ -44,7 +44,9 @@ public class FormController {
                         model.put("accion","/formularios/crear");
                     }
                     model.put("forms",formService.explorarTodo());
-
+                    // para los botones activos del sidebar
+                    model.put("formulario","active");
+                    model.put("map","");
                     ctx.render("public/form.html",model);
                 });
 
@@ -61,10 +63,7 @@ public class FormController {
                     ctx.redirect("/formularios");
 
                 });
-                post("/maps",ctx -> {
-                    System.out.println("llego patron");
-                    ctx.result("comming soon");
-                });
+
 
                 get("/editar/:id",ctx -> {
                     Form form = formService.buscar(ctx.pathParam("id", Integer.class).get());
@@ -104,7 +103,17 @@ public class FormController {
                     ctx.render("public/form.html",model);
                 });
 
+
+
             });
+
+            get("/mapa",ctx -> {
+                // para los botones activos del sidebar
+                model.put("formulario","");
+                model.put("map","active");
+                ctx.render("public/maps.html",model);
+            });
+
         });
     }
     private List<Form> getFormByUser(List<Form> servicioFormulario, User user) {

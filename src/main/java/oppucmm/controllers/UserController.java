@@ -30,11 +30,6 @@ public class UserController {
         app.get("/", ctx -> ctx.redirect("/formularios"));
         app.routes(() -> {
             path("/", () -> {
-                before("/formularios", ctx -> {
-                    if (ctx.sessionAttribute("usuario") == null) {
-                        ctx.redirect("/login");
-                    }
-                });
                 before("/", ctx -> {
                     if (ctx.sessionAttribute("usuario") == null) {
                         ctx.redirect("/login");
@@ -57,7 +52,7 @@ public class UserController {
             String password = ctx.formParam("password");
             String rol = ctx.formParam("role");
             System.out.println("el valor es> " + ctx.formParam("role"));
-            User aux = new User(username, fullName, password);
+            User aux = new User(fullName, username, password);
             if (rol != null) {
                 if (rol.matches("Administrador"))
                     aux.setRolesList(Set.of(RoleApp.ROLE_ADMIN));
@@ -68,7 +63,8 @@ public class UserController {
                 }
                 if (Controller.getInstance().getUserById(username) == null) {
                     Controller.getInstance().addUser(aux);
-                    ctx.render("public/register.html", modelo);
+                    model.put("Success","Usuario creado de forma exitosa!");
+                    ctx.redirect("/formularios");
                     System.out.println("CREADO");
                 } else {
                     modelo.put("Error", "El nombre de usuario ya existe. Intentelo de nuevo! ");
@@ -84,33 +80,42 @@ public class UserController {
             Map<String, Object> modelo = new HashMap<>();
             String username = ctx.formParam("username");
             String password = ctx.formParam("password");
-            String boton = ctx.formParam("checkbox");
             //Authenticator
-            User aux = Controller.getInstance().userAuthenticator(username, password);
+            User aux = UserServices.getInstance().buscar(username);
             if (aux != null) {
-                rememberMe = ctx.formParam("rememberMe");
-                if (rememberMe != null) {
-                    if (rememberMe.equalsIgnoreCase("ON")) {
-                        System.out.println("Creando cookie...\n");
-                        StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
-                        encryptor.setPassword(mpCryptoPassword);
-                        encryptor.encrypt(aux.getPassword());
-                        ctx.cookie("username", aux.getUsername(), 604800);
-                        ctx.cookie("password", encryptor.encrypt(aux.getPassword()), 604800);
-                    } else {
-                        System.out.println("Cookie no pudo ser creada...\n");
+                if(aux.getPassword().equals(password)){
+                    rememberMe = ctx.formParam("rememberMe");
+                    if (rememberMe != null) {
+                        if (rememberMe.equalsIgnoreCase("ON")) {
+                            System.out.println("Creando cookie...\n");
+                            StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
+                            encryptor.setPassword(mpCryptoPassword);
+                            encryptor.encrypt(aux.getPassword());
+                            ctx.cookie("username", aux.getUsername(), 604800);
+                            ctx.cookie("password", encryptor.encrypt(aux.getPassword()), 604800);
+                        } else {
+                            System.out.println("Cookie no pudo ser creada...\n");
+                        }
                     }
+                    System.out.println("Usuario "+ aux.getUsername()+" entered to system [OP-PUCMM]");
+                    ctx.sessionAttribute("usuario", username);
+                    ctx.redirect("/formularios");
+                }else{
+                    System.out.println("User: "+aux.getUsername()+" entered an incorrect password");
+                    modelo.put("Error","Contraseña incorrecta!");
                 }
-                ctx.sessionAttribute("usuario", username);
-                ctx.redirect("/formularios");
             } else {
-                modelo.put("Error", "Please check username & password! ");
-                ctx.render("public/page-login.html", modelo);
+                System.out.println("User is incorrect!");
+                modelo.put("Error", "Credenciales incorrectas! ");
             }
+            ctx.render("public/page-login.html", modelo);
+
         });
         app.post("/formularios", ctx -> {
             // esta ruta deberia ser la que esta afuera con el login
+          //  ctx.sessionAttribute("usuario", null);
             Map<String, Object> modelo = new HashMap<>();
+            modelo.put("usuario",ctx.sessionAttribute("usuario"));
             ctx.render("public/form.html", modelo);
         });
         app.get("/login", ctx -> {

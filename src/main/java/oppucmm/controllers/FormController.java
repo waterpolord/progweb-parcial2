@@ -16,8 +16,7 @@ public class FormController {
     private Map<String, Object> model = new HashMap<>();
     Boolean onUpdate = false;
     public FormController(Javalin app) {
-        Form f1 = new Form("Samuel Peña","Santiago","Grado");
-        formService.crear(f1);
+
         //super(app);
         this.app = app;
     }

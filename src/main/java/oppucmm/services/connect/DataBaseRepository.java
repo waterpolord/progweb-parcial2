@@ -104,16 +104,14 @@ public class DataBaseRepository<T> {
     }
 
     public T buscar(Object id) throws PersistenceException {
-        EntityManager entityManager = getEntityManager();
-        T entidad = null;
-        try {
-            entidad = entityManager.find(this.claseEntidad, id);
-            System.out.println("La busqueda ha sidoe existosa!");
+        EntityManager em = getEntityManager();
+        try{
+            return em.find(claseEntidad, id);
+        } catch (Exception ex){
+            throw  ex;
         } finally {
-            entityManager.close();
+            em.close();
         }
-
-        return entidad;
     }
 
     public List<T> explorarTodo() throws PersistenceException {

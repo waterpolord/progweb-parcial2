@@ -1,100 +1,22 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Dashboard | OP - PUCMM</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <!-- VENDOR CSS -->
-    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/vendor/linearicons/style.css">
-    <link rel="stylesheet" href="assets/vendor/chartist/css/chartist-custom.css">
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
-    <link rel="stylesheet" href="assets/css/demo.css">
-    <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-    <!-- ICONS -->
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-    <link href="css/myStyle.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
-    <!--JAVASCRIPT FROM SCRIPT FORLDER--->
-    <script src="scripts/offline.js"></script>
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
-
-
+<head th:replace="public/plantilla.html::head">
 
 </head>
 
 <body onload="updateOnlineStatus()">
 <!-- WRAPPER -->
 
-<div id="wrapper">
+<div id="wrapper" >
     <!-- NAVBAR -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="brand">
-            <a href="form.html"><img src="assets/img/logo-dark.png" alt="Klorofil Logo"
-                                     class="img-responsive logo"></a>
-        </div>
-        <div class="container-fluid">
-            <div class="navbar-btn">
-                <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
-            </div>
-            <div id="navbar-menu">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a id="demo" role="alert" href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                                class="lnr lnr-question-circle"></i> <span></span> <i
-                                class="icon-submenu lnr lnr-chevron-down"></i></a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="" class="dropdown-toggle" data-toggle="dropdown"><img
-                                src="assets/img/icons8-admin-settings-male-50.png" class="img-circle" alt="Avatar">
-                            <span th:text="${fullName}"></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/logout"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <nav class="navbar navbar-default navbar-fixed-top" th:replace="public/plantilla.html::header">
+
     </nav>
     <!-- END NAVBAR -->
     <!-- LEFT SIDEBAR -->
-    <div id="sidebar-nav" class="sidebar">
-        <div class="sidebar-scroll">
-            <nav>
-                <ul class="nav">
-                    <li><a href="/formularios/maps" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a>
-                    </li>
-                    <li><a href="/formularios" class="active"><i class="lnr lnr-file-empty"></i>
-                        <span>Formularios</span></a></li>
-                    <li><a href="panels.html" class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
-                    <li>
-                        <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i>
-                            <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                        <div id="subPages" class="collapse ">
-                            <ul class="nav">
-                                <li><a href="page-profile.html" class="">Profile</a></li>
-                                <li><a href="page-login.html" class="">Login</a></li>
-                                <li><a href="/userRegister" class="">User Register</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="maps.html" class=""><i class="lnr lnr-dice"></i> <span>Maps</span></a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
+    <div th:replace="public/plantilla.html::sidebar">
 
+    </div>
     <!-- END LEFT SIDEBAR -->
     <!-- MAIN -->
     <div class="main">
@@ -144,9 +66,6 @@
                                 </div>
                                 <input type="hidden" id="idEdit" name="idEdit" value="">
 
-                                <!--
-                                                                <button type="submit" th:text="GUARDAR FORMULARIO" class="btn btn-primary btn-lg btn-block">GUARDAR FORMULARIO</button>
-                                -->
                                 <div class="buttons">
                                     <button type="submit">
                                         <a class="btn effect04" data-sm-link-text="CLICK"
@@ -163,7 +82,7 @@
                                                 <table class="table" id="dataTable">
                                                     <thead>
                                                     <tr>
-                                                        <th>ID</th>
+
                                                         <th>NOMBRE COMPLETO</th>
                                                         <th>SECTOR</th>
                                                         <th>NIVEL ACADEMICO</th>
@@ -173,12 +92,11 @@
                                                     </thead>
                                                     <tbody>
                                                     <tr th:each="aux : ${forms}">
-                                                        <td th:text="${aux.id}"></td>
                                                         <td th:text="${aux.name}"></td>
                                                         <td th:text="${aux.sector}"></td>
                                                         <td th:text="${aux.academicLevel}"></td>
                                                         <td>
-                                                            <a id='edit' th:href="'formularios/editar/'+${aux.id}"
+                                                           <!-- <a id='edit' th:href="'formularios/editar/'+${aux.id}"
                                                                style="color: #2B333E" class="edit"
                                                                data-toggle="modal"><i class="material-icons"
                                                                                       data-toggle="tooltip"
@@ -186,16 +104,16 @@
                                                             <a id='delete' th:href="'formularios/eliminar/'+${aux.id}"
                                                                style="color: red" class="delete" data-toggle="modal"><i
                                                                     class="material-icons" data-toggle="tooltip"
-                                                                    title="Delete">&#xE872;</i></a>
+                                                                    title="Delete">&#xE872;</i></a>-->
                                                             <!--AGREGUÉ ESTO PARA EL MODAL, LO OTRO ESTA IGUAL QUE COMO SE DEJÓ LA ULTIMA VEZ-->
-                                                            <a id="editar" href="#editModal" style="color: red"
-                                                               class="delete" data-toggle="modal"><i
+                                                            <a id="editar" href="#editModal"
+                                                               class="edit" data-toggle="modal"><i
                                                                     class="material-icons" data-toggle="tooltip"
-                                                                    title="Delete">&#xE872;</i></a>
+                                                                    title="Editar">&#xE254;</i></a>
                                                             <a id="borrar" href="#deleteModal" style="color: red"
                                                                class="delete" data-toggle="modal"><i
                                                                     class="material-icons" data-toggle="tooltip"
-                                                                    title="Delete">&#xE872;</i></a>
+                                                                    title="Borrar">&#xE872;</i></a>
                                                         </td>
                                                     </tr>
                                                     </tbody>
@@ -223,44 +141,7 @@
         <div class="main-content">
             <div class="container-fluid">
                 <!-- OVERVIEW -->
-                <div class="panel panel-headline">
-                    <div class="panel-heading">
-                        <h3 class="panel-title text-uppercase">Formularios registrados</h3>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <!-- BASIC TABLE -->
-                                    <div class="panel">
-                                        <div class="panel-body">
-                                            <table class="table-responsive">
-                                                <thead>
-                                                <tr>
 
-                                                    <th scope="col" >Nombre completo</th>
-                                                    <th scope="col">Sector</th>
-                                                    <th scope="col">Nivel academico</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr scope="row" th:each="aux : ${forms}">
-                                                    <td th:text="${aux.name}">Nombre</td>
-                                                    <td th:text="${aux.sector}">Precio</td>
-                                                    <td th:text="${aux.academicLevel}">Cantidad</td>
-                                                    <td>
-                                                    <!--    <a th:hidden="!${logged}" th:href="'formularios/editar/'+${aux.id}" th class="btn btn-secondary lnr lnr-pencil "/>
-
-                                                        <a th:hidden="!${logged}" th:text="Eliminar" th:href="'/formularios/eliminar/'+${aux.id}" th class="btn btn-danger lnr lnr-trash"/>
-                                                    -->
-                                                        <a th:href="'formularios/editar/'+${aux.id}" class=""><i class="lnr lnr-pencil"></i> </a>
-                                                        <a th:href="'/formularios/eliminar/'+${aux.id}" style="color: #ff0000" class=""><i class="lnr lnr-trash"></i> </a>
-
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <!-- END BASIC TABLE -->
-                                    </div>
 
         <!-- Edit Modal HTML --> <!--Editar Formulario-->
         <div id="editModal" class="modal fade">
@@ -354,12 +235,12 @@
 </div>
 <!-- END MAIN -->
 <!-- END WRAPPER -->
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<script src="assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
-<script src="assets/vendor/chartist/js/chartist.min.js"></script>
-<script src="assets/scripts/klorofil-common.js"></script>
+<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+<script src="/assets/vendor/chartist/js/chartist.min.js"></script>
+<script src="/assets/scripts/klorofil-common.js"></script>
 <!--<script src="assets/scripts/editDelete.js"></script>--->
 </body>
 <!-- Javascript -->

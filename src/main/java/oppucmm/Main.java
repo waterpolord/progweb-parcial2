@@ -7,6 +7,7 @@ import io.javalin.plugin.rendering.template.JavalinThymeleaf;
 import oppucmm.controllers.FormController;
 import oppucmm.controllers.UserController;
 import oppucmm.controllers.Controller;
+import oppucmm.controllers.WebSocketController;
 import oppucmm.services.connect.DataBaseServices;
 
 import java.sql.SQLException;
@@ -38,10 +39,11 @@ public class Main {
         //Create fake user
         Controller.getInstance().createFakeUser();
         //Create fake form
-        Controller.getInstance().createFakeForm();
+      //  Controller.getInstance().createFakeForm();
 
         new UserController(app).aplicarRutas();
         new FormController(app).aplicarRutas();
+        new WebSocketController(app).aplicarRutas();
     }
     public static String getModoConexion() {
         return modoConexion;

@@ -15,18 +15,20 @@ public class FormController {
     private Javalin app;
     private Map<String, Object> model = new HashMap<>();
     Boolean onUpdate = false;
+
     public FormController(Javalin app) {
 
         //super(app);
         this.app = app;
     }
+
     //@Override
     public void aplicarRutas() {
         app.routes(() -> {
             path("/formularios", () -> {
-                before("/*",ctx -> {
+                before("/*", ctx -> {
                     // verifica que el usuario este logeado
-                    if(ctx.sessionAttribute("usuario")==null){
+                    if (ctx.sessionAttribute("user") == null) {
                         //ctx.redirect("/login");
                         System.out.println("llego patron no ta logueado");
                         ctx.result("no loguado");
@@ -34,20 +36,24 @@ public class FormController {
                     System.out.println("a mi no me impolta si ta logueado en vdd");
 
                 });
-                get("/",ctx -> {
-
+                get("/", ctx -> {
+                    /*
                     System.out.println("llego patron");
                     if(onUpdate ){
                         model.put("accion","/formularios/editar");
                     }
                     else {
-                        model.put("accion","/formularios/crear");
+                       // model.put("accion","/formularios/crear");
                     }
-                    model.put("forms",formService.explorarTodo());
+                     */
+                //    User u1 = Controller.getInstance().getUserByUsername(ctx.sessionAttribute("username"));
+                 //   List<Form> f1 = getFormByUser(Controller.getInstance().listForm(), u1);
+               //     model.put("user", u1.getUsername());
+              //      model.put("forms", f1);
                     // para los botones activos del sidebar
-                    model.put("formulario","active");
-                    model.put("map","");
-                    ctx.render("public/form.html",model);
+                    model.put("formulario", "active");
+                    model.put("map", "");
+                    ctx.render("public/form.html", model);
                 });
 
                 post("/crear", ctx -> {
@@ -56,7 +62,7 @@ public class FormController {
                     Form form = new Form(ctx.formParam("name"),
                             ctx.formParam("sector"),
                             ctx.formParam("level")
-                            );
+                    );
 
                     formService.crear(form);
 
@@ -65,24 +71,24 @@ public class FormController {
                 });
 
 
-                get("/editar/:id",ctx -> {
+                get("/editar/:id", ctx -> {
                     Form form = formService.buscar(ctx.pathParam("id", Integer.class).get());
-                    model.put("form",form);
+                    model.put("form", form);
                     //model.put("onEdit",true);
-                    model.put("accion", "/formularios/editar"+form.getId());
+                    model.put("accion", "/formularios/editar" + form.getId());
                     // las rutas solo estan registradas en el sidebar y por tanto se debe llevar a esta
                     onUpdate = true;
                     ctx.redirect("/formularios");
 
-                    ctx.render("public/form.html",model);
+                    ctx.render("public/form.html", model);
                 });
 
-                post("/editar",ctx -> {
+                post("/editar", ctx -> {
                     Form form = new Form(ctx.formParam("name"),
                             ctx.formParam("sector"),
                             ctx.formParam("level")
                     );
-                    Form old =(Form)model.get("form");
+                    Form old = (Form) model.get("form");
 
                     old.setName(form.getName());
                     old.setSector(form.getSector());
@@ -92,37 +98,38 @@ public class FormController {
                     /*model.put("form",null);
                     model.put("forms",formService.explorarTodo());*/
                     ctx.redirect("/formularios");
-                    ctx.render("public/form.html",model);
+                    ctx.render("public/form.html", model);
                 });
 
 
-                get("/eliminar/:id",ctx -> {
+                get("/eliminar/:id", ctx -> {
                     //Form form = formService.buscar(ctx.pathParam("id", Integer.class).get());
                     formService.eliminar(ctx.pathParam("id", Integer.class).get());
                     ctx.redirect("/formularios");
-                    ctx.render("public/form.html",model);
+                    ctx.render("public/form.html", model);
                 });
 
 
-
             });
 
-            get("/mapa",ctx -> {
+            get("/mapa", ctx -> {
                 // para los botones activos del sidebar
-                model.put("formulario","");
-                model.put("map","active");
-                ctx.render("public/maps.html",model);
+                model.put("formulario", "");
+                model.put("map", "active");
+                ctx.render("public/maps.html", model);
             });
 
         });
+        app.get("/report", ctx -> {
+
+            Map<String, Object> modelo = new HashMap<>();
+            //ENVIADO USUARIO CORRESPONDIENTE A DICHA SESION
+            modelo.put("user", ctx.sessionAttribute("user"));
+            //ENVIANDO TODOS LOS FORMULARIOS DEL SERVIDOR
+            model.put("formularios",Controller.getInstance().listForm());
+            ctx.render("/public/report.html", modelo);
+        });
     }
-    private List<Form> getFormByUser(List<Form> servicioFormulario, User user) {
-        List<Form> list = new ArrayList<Form>();
-        for (Form f: servicioFormulario) {
-            if (f.getUser().equals(user)){
-                list.add(f);
-            }
-        }
-        return list;
-    }
+
+
 }

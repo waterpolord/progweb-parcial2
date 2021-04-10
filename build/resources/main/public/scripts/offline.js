@@ -1,4 +1,4 @@
-
+/*
 window.addEventListener('online',  updateOnlineStatus);
 window.addEventListener('offline', updateOnlineStatus);
 
@@ -22,3 +22,4 @@ function networkIndicator(condition) {
             break;
     }
 }
+ */

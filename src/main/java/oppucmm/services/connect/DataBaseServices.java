@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DataBaseServices {
-    private String URL = "jdbc:h2:tcp://localhost/~/OPP3";
+    private String URL = "jdbc:h2:tcp://localhost/~/oppucmm";
     private static DataBaseServices conexionBD;
     private static Server tcp;
     private static Server webServer;

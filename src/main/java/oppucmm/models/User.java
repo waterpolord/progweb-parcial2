@@ -7,10 +7,10 @@ import java.util.Set;
 @Table(name = "User")
 public class User implements Serializable {
     @Id
-    @Column(name = "fullName")
-    private String fullName;
     @Column(name = "username")
     private String username;
+    @Column(name = "fullName")
+    private String fullName;
     @Column(name = "password")
     private String password;
     @ElementCollection(fetch = FetchType.EAGER)

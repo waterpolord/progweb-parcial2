@@ -72,9 +72,7 @@ public class Form implements Serializable {
     public void setAcademicLevel(String academicLevel) {
         this.academicLevel = academicLevel;
     }
-    public User getUser() {
-        return user;
-    }
+    public User getUser() { return user; }
 
     public void setUser(User user) {
         this.user = user;

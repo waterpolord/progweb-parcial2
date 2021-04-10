@@ -4,13 +4,10 @@ import io.javalin.Javalin;
 import oppucmm.models.Form;
 import oppucmm.models.User;
 import oppucmm.models.RoleApp;
-import oppucmm.services.UserServices;
+import oppucmm.services.UserService;
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import static io.javalin.apibuilder.ApiBuilder.*;
 
@@ -31,14 +28,14 @@ public class UserController {
         app.routes(() -> {
             path("/", () -> {
                 before("/", ctx -> {
-                    if (ctx.sessionAttribute("usuario") == null) {
+                    if (ctx.sessionAttribute("user") == null) {
                         ctx.redirect("/login");
                     }
                 });
                 get("/userRegister", ctx -> {
                     // esta ruta deberia ser la que esta afuera con el login
                     Map<String, Object> modelo = new HashMap<>();
-                    List<User> auxUser = UserServices.getInstance().explorarTodo();
+                    List<User> auxUser = UserService.getInstance().explorarTodo();
                     modelo.put("listUser",auxUser);
                     ctx.render("public/register.html", modelo);
                 });
@@ -61,9 +58,9 @@ public class UserController {
                 else {
                     aux.setRolesList(Set.of(RoleApp.ROLE_VOLUNTARIO));
                 }
-                if (Controller.getInstance().getUserById(username) == null) {
+                if (Controller.getInstance().getUserByUsername(username) == null) {
                     Controller.getInstance().addUser(aux);
-                    model.put("Success","Usuario creado de forma exitosa!");
+                    model.put("Success","Userneme creado de forma exitosa!");
                     ctx.redirect("/formularios");
                     System.out.println("CREADO");
                 } else {
@@ -81,7 +78,7 @@ public class UserController {
             String username = ctx.formParam("username");
             String password = ctx.formParam("password");
             //Authenticator
-            User aux = UserServices.getInstance().buscar(username);
+            User aux = UserService.getInstance().buscar(username);
             if (aux != null) {
                 if(aux.getPassword().equals(password)){
                     rememberMe = ctx.formParam("rememberMe");
@@ -97,8 +94,8 @@ public class UserController {
                             System.out.println("Cookie no pudo ser creada...\n");
                         }
                     }
-                    System.out.println("Usuario "+ aux.getUsername()+" entered to system [OP-PUCMM]");
-                    ctx.sessionAttribute("usuario", username);
+                    System.out.println("username "+ aux.getUsername()+" entered to system [OP-PUCMM]");
+                    ctx.sessionAttribute("user", username);
                     ctx.redirect("/formularios");
                 }else{
                     System.out.println("User: "+aux.getUsername()+" entered an incorrect password");
@@ -113,9 +110,13 @@ public class UserController {
         });
         app.post("/formularios", ctx -> {
             // esta ruta deberia ser la que esta afuera con el login
-          //  ctx.sessionAttribute("usuario", null);
+          //  ctx.sessionAttribute("username", null);
+            User u1 = Controller.getInstance().getUserByUsername(ctx.sessionAttribute("user"));
+            List<Form> f1 = getFormByUser(Controller.getInstance().listForm(), u1);
+            model.put("user", u1.getUsername());
+            model.put("forms", f1);
             Map<String, Object> modelo = new HashMap<>();
-            modelo.put("usuario",ctx.sessionAttribute("usuario"));
+        //    modelo.put("user",ctx.sessionAttribute("user"));
             ctx.render("public/form.html", modelo);
         });
         app.get("/login", ctx -> {
@@ -124,8 +125,21 @@ public class UserController {
         app.get("/logout", ctx -> {
             System.out.println("\nEliminando cokkie...");
             ctx.clearCookieStore();
-            ctx.sessionAttribute("usuario", null);
+            ctx.sessionAttribute("user", null);
             ctx.redirect("/login");
         });
+    }
+    private List<Form> getFormByUser(List<Form> formService, User user) {
+        List<Form> list = new ArrayList<Form>();
+        System.out.println("[...] Searching forms");
+
+        for (Form f : formService) {
+            if (f.getUser().equals(user)) {
+                System.out.println("[...] Form created by: " + f.getUser());
+                list.add(f);
+            }
+        }
+
+        return list;
     }
 }

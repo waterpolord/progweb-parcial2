@@ -52,7 +52,11 @@ public class FormController {
               //      model.put("forms", f1);
                     // para los botones activos del sidebar
                     model.put("formulario", "active");
+
+                    model.put("user",ctx.sessionAttribute("user"));
                     model.put("map", "");
+                    model.put("report","");
+
                     ctx.render("public/form.html", model);
                 });
 
@@ -116,18 +120,24 @@ public class FormController {
                 // para los botones activos del sidebar
                 model.put("formulario", "");
                 model.put("map", "active");
+                model.put("report","");
+
+                model.put("formularios",Controller.getInstance().listForm());
                 ctx.render("public/maps.html", model);
             });
 
         });
         app.get("/report", ctx -> {
 
-            Map<String, Object> modelo = new HashMap<>();
+            // para los botones activos del sidebar
+            model.put("formulario", "");
+            model.put("map", "");
+            model.put("report","active");
             //ENVIADO USUARIO CORRESPONDIENTE A DICHA SESION
-            modelo.put("user", ctx.sessionAttribute("user"));
+            model.put("user", ctx.sessionAttribute("user"));
             //ENVIANDO TODOS LOS FORMULARIOS DEL SERVIDOR
             model.put("formularios",Controller.getInstance().listForm());
-            ctx.render("/public/report.html", modelo);
+            ctx.render("/public/report.html", model);
         });
     }
 

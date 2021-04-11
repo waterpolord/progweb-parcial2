@@ -68,8 +68,12 @@ public class WebSocketController extends ControladorBase {
         if(f1.size()>0){
             auxUsuario = Controller.getInstance().getUserByUsername(f1.get(0).getUser());
         }
+        Location location = new Location( 77.208917,28.614884);
+        Form form = new Form("Juan","La penda","Doctorado",auxUsuario,location);
+        Controller.getInstance().addForm(form);
         for (FormAux f: f1) {
             Location l1 = new Location(f.getLongitude(),f.getLatitude());
+
             aux = new Form(f.getFullName(),f.getSector(),f.getAcademicLevel(),auxUsuario,l1);
             Controller.getInstance().addForm(aux);
         }

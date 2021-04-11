@@ -2,7 +2,6 @@ package oppucmm.models;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.Embedded;
 import java.io.Serializable;
 
 @Embeddable
@@ -10,33 +9,33 @@ public class Location implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Column(name = "longitude")
-    private String longitude;
+    private Double longitude;
     @Column(name = "latitude")
-    private String latitude;
+    private Double latitude;
 
     /*Empty constructor*/
     public Location() {
 
     }
     /*Principal constructor*/
-    public Location(String longitude, String latitude) {
+    public Location(Double longitude, Double latitude) {
         this.longitude = longitude;
         this.latitude = latitude;
     }
     /*Getters and Setters*/
-    public String getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(String longitude) {
+    public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
 
-    public String getLatitude() {
+    public Double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(Double latitude) {
         this.latitude = latitude;
     }
 }

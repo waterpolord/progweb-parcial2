@@ -23,9 +23,47 @@
 		}
 	</style>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmO0JHOHAXY2C3Ud49KbMSwFf3APep1Ow"></script>
+	<script type="text/javascript" th:inline="javascript">
+		var forms = [[${formularios}]]
+		var locations = [
+
+		];
+		for (i = 0; i < forms.length; i++) {
+			locations.push(
+					[forms[i].name,
+					forms[i].location.latitude,
+					forms[i].location.longitude,i+1]
+			)
+		}
+		console.log("Localizaciones: ")
+		console.log(locations)
+
+		function InitMap() {
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 13,
+				center: new google.maps.LatLng(locations[0][1], locations[0][2]),
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			});
+			var infowindow = new google.maps.InfoWindow();
+			var marker, i;
+			for (i = 0; i < locations.length; i++) {
+				marker = new google.maps.Marker({
+					position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+					map: map
+				});
+				google.maps.event.addListener(marker, 'click', (function (marker, i) {
+					return function () {
+						infowindow.setContent(locations[i][0]);
+						infowindow.open(map, marker);
+					}
+				})(marker, i));
+			}
+		}
+	</script>
 </head>
 
-<body onload="updateOnlineStatus()">
+<body onload="InitMap(); updateOnlineStatus();">
 
 <script>
 
@@ -113,10 +151,17 @@
 					<div class="card mb-4">
 						<div class="card-body">
 							<div id="map" class="map"></div>
-							<script>
+							<!--<script th:inline="javascript">
 								function success(pos){
-									var crd = pos.coords
-									iniciarMap(crd.latitude, crd.longitude)
+									/*var crd = pos.coords
+									iniciarMap(crd.latitude, crd.longitude)*/
+									var forms = [[${formularios}]]
+									for (i = 0; i < forms.length; i++) {
+										iniciarMap(forms[i].location.latitude, forms[i].location.longitude)
+										console.log("Aqui los forms: ")
+										console.log(forms[i].location.longitude)
+									}
+
 								}
 								navigator.geolocation.getCurrentPosition(success)
 
@@ -127,7 +172,7 @@
 										center: coord
 									});
 									addMarker({lat:lat ,lng: lng}, map)
-									addMarker({lat:lat ,lng: lng}, map)
+									//addMarker({lat:lat ,lng: lng}, map)
 								}
 								function addMarker(location, map) {
 									// Add the marker at the clicked location, and add the next-available label
@@ -139,7 +184,7 @@
 								}
 							</script>
 							<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmO0JHOHAXY2C3Ud49KbMSwFf3APep1Ow&callback=iniciarMap"></script>
-						</div>
+						--></div>
 						<div class="card-footer">
 
 						</div>

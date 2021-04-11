@@ -60,7 +60,8 @@ public class UserController {
                 }
                 if (Controller.getInstance().getUserByUsername(username) == null) {
                     Controller.getInstance().addUser(aux);
-                    model.put("Success","Userneme creado de forma exitosa!");
+                    model.put("Success","Usuario creado de forma exitosa!");
+                    ctx.sessionAttribute("user", username);
                     ctx.redirect("/formularios");
                     System.out.println("CREADO");
                 } else {

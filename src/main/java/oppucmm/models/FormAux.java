@@ -8,15 +8,15 @@ public class FormAux {
     private String fullName;
     private String sector;
     private String academicLevel;
-    private String latitude;
-    private String longitude;
+    private Double latitude;
+    private Double longitude;
     private String user;
 
     /*Empty constructor*/
     public FormAux() {
     }
     /*Principal Constructor*/
-    public FormAux(String fullName, String sector, String academicLevel, String latitude, String longitude, String user) {
+    public FormAux(String fullName, String sector, String academicLevel, Double latitude, Double longitude, String user) {
         this.id = id;
         this.fullName = fullName;
         this.sector = sector;
@@ -40,12 +40,12 @@ public class FormAux {
 
     public String getAcademicLevel() { return academicLevel; }
 
-    public String getLatitude() { return latitude; }
+    public Double getLatitude() { return latitude; }
 
 
-    public String getLongitude() { return longitude; }
+    public Double getLongitude() { return longitude; }
 
-    public void setLongitude(String longitude) { this.longitude = longitude; }
+    public void setLongitude(Double longitude) { this.longitude = longitude; }
 
     public String getUser() { return user; }
 

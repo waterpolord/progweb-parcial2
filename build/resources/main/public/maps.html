@@ -17,6 +17,8 @@
 	<!-- ICONS -->
 	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.2/css/ol.css" type="text/css">
+	<!--JAVASCRIPT FROM SCRIPT FORLDER--->
+	<script src="scripts/offline.js"></script>
 	<style>
 		#map {
 			height: 500px;
@@ -70,33 +72,6 @@
 </head>
 
 <body onload="InitMap(); updateOnlineStatus()">
-
-<script>
-
-	window.addEventListener('online',  updateOnlineStatus);
-	window.addEventListener('offline', updateOnlineStatus);
-
-	function updateOnlineStatus(event) {
-		var condition = navigator.onLine ? "online" : "offline";
-		document.body.className = condition;
-		networkIndicator(condition);
-	}
-	function networkIndicator(condition) {
-
-		switch (condition) {
-			case "online":
-				var signal = document.getElementById("idIndicator");
-				signal.innerHTML = "En linea <i id=\"logo\" class=\"fa fa-check-circle fa-fw\"></i>";
-				signal.setAttribute("class", "btn-success");
-				break;
-			case "offline":
-				var signal = document.getElementById("idIndicator");
-				signal.innerHTML = "Sin Conexión <i id=\"logo\" class=\"fa fa-times-circle fa-fw\"></i>";
-				signal.setAttribute("class", "btn-danger");
-				break;
-		}
-	}
-</script>
 <!-- WRAPPER -->
 <div id="wrapper">
 	<!-- NAVBAR -->
@@ -111,6 +86,9 @@
 			</div>
 			<div id="navbar-menu">
 				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a id="idIndicator" role="alert"></a>
+					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
 								class="lnr lnr-question-circle"></i> <span>Help</span> <i
@@ -150,7 +128,7 @@
 				<div class="panel panel-headline">
 					<div class="panel-heading">
 						<h3 class="panel-title">OFICINA DE PLANEAMIENTO</h3>
-						<p class="panel-subtitle">Mapa</p>
+						<p class="panel-subtitle">Mapa | Localizacion de los formularios registrados</p>
 					</div>
 					<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.2/build/ol.js"></script>
 

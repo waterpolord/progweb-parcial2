@@ -30,7 +30,6 @@ dataBase.onerror = function (e) {
 };
 
 
-//---------------------------GEOLOGIZACIÓN--------------------------------
 //Obteniendo GEOLOCALIZACIÓN
 var lati = "";
 var longi = "";
@@ -223,7 +222,6 @@ function updateForm() {
     };
 }
 
-//--------------------------------Conexion con el servidor (Envios/recesión de datos)--------------------------------
 //abriendo el objeto para el websocket
 var webSocket;
 var tiempoReconectar = 5000;

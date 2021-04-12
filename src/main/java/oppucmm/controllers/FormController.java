@@ -127,15 +127,23 @@ public class FormController {
             });
 
         });
+        app.before("/report", ctx -> {
+            // verifica que el usuario este logeado
+            if (ctx.sessionAttribute("user") == null) {
+                //ctx.redirect("/login");
+                System.out.println("llego patron no ta logueado");
+                ctx.result("no loguado");
+            }
+            System.out.println("a mi no me impolta si ta logueado en vdd");
+        });
+
         app.get("/report", ctx -> {
 
             // para los botones activos del sidebar
             model.put("formulario", "");
             model.put("map", "");
             model.put("report","active");
-            //ENVIADO USUARIO CORRESPONDIENTE A DICHA SESION
             model.put("user", ctx.sessionAttribute("user"));
-            //ENVIANDO TODOS LOS FORMULARIOS DEL SERVIDOR
             model.put("formularios",Controller.getInstance().listForm());
             ctx.render("/public/report.html", model);
         });

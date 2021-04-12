@@ -75,7 +75,7 @@
                                         <a class="btn effect04" data-sm-link-text="CLICK"
                                            target="_blank"><span>GUARDAR</span></a>
                                     </button>
-                                    <button id="enviarForm" type="submit">
+                                    <button class="infoConexion" id="enviarForm" type="submit">
                                         <a class="btn effect04" data-sm-link-text="CLICK"
                                            target="_blank"><span>ENVIAR</span></a>
                                     </button>
@@ -153,7 +153,6 @@
                 <div id="editModal" class="modal fade">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <!-- Redirecionaldo a la misma pagina y agregando un post-->
                             <form id="formEdit" name="formEdit" enctype="multipart/form-data">
                                 <div class="modal-header">
                                     <h4 class="modal-title">Edit Form</h4>
@@ -181,7 +180,7 @@
                                             <select name="academicLevelEdit" id="academicLevelEdit" placeholder="level"
                                                     class="form-control"
                                                     aria-required="true" required>
-                                                <option selected> Nivel Academico</option>
+                                                <option selected value="0"> Nivel Academico</option>
                                                 <option name="academicLevel" value="Basico">Basico</option>
                                                 <option name="academicLevel" value="Medio">Medio</option>
                                                 <option name="academicLevel" value="Grado">Grado</option>
@@ -231,6 +230,52 @@
                         </div>
                     </div>
                 </div>
+                <!---MODAL SI NO HAY DATA EN LA TABLA QUE NO SE PERMITA ENVIAR FORMS--->
+                <div id="infoRegister" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form>
+                                <input type="hidden" class="btn btn-danger" value="">
+                                <div class="modal-header">
+                                    <h2 class="modal-title"Formulario></h2>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                        &times;
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h2>No hay informacion registrada..</h2>
+                                    <h3 class="text-danger">Favor registrar un formulario</h3>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!---MODAL SI NO HAY CONEXION A INTERNET DESPLEGAR UN MENSAJE--->
+                <div id="infoConexion" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form>
+                                <input type="hidden" class="btn btn-danger" value="">
+                                <div class="modal-header">
+                                    <h2 class="modal-title"Formulario></h2>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                        &times;
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h2>No existe conexion a internet..</h2>
+                                    <h3 class="text-danger">Error al enviar formulario</h3>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <!-- END OVERVIEW -->
@@ -247,6 +292,7 @@
 <script src="/assets/vendor/chartist/js/chartist.min.js"></script>
 <script src="/assets/scripts/klorofil-common.js"></script>
 <!--<script src="assets/scripts/editDelete.js"></script>--->
+<script src="scripts/validCamps.js"></script>
 <script src="scripts/indexDB.js"></script>
 <script src="scripts/editDelete.js"></script>
 

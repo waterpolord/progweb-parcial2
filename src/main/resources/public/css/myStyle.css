@@ -299,3 +299,10 @@ p {
     -webkit-transform: translateY(0) scale(1,1);
     transform: translateY(0) scale(1,1);
 }
+
+
+ #mapReport {
+     height: 500px;
+     width: 100%;
+ }
+

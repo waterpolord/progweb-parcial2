@@ -16,7 +16,7 @@
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
-    <link rel="icon" type="image/png" sizes="96x96" href="http://localhost:7000/assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="http://localhost:7000/assets/img/apple-icon.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <link href="css/myStyle.css" rel="stylesheet">
@@ -36,8 +36,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-default navbar-fixed-top" th:fragment="header" >
         <div class="brand">
-            <a href="form.html"><img src="http://localhost:7000/assets/img/logo-dark.png" alt="Klorofil Logo"
-                                     class="img-responsive logo"></a>
+            <a href="form.html"><img src="http://localhost:7000/assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo" style="height: 29px;width: 139px"></a>
         </div>
         <div class="container-fluid">
             <div class="navbar-btn">
@@ -52,7 +51,7 @@
                     </li>
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle" data-toggle="dropdown"><img
-                                src="http://localhost:7000/assets/img/icons8-admin-settings-male-50.png" class="img-circle" alt="Avatar">
+                                src="http://localhost:7000/assets/img/admin-icon.png" class="img-circle" alt="Avatar">
                             <span th:text="${fullName}"></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="/logout"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
@@ -74,13 +73,11 @@
                         <span>Informes</span></a></li>
                     <li><a href="/formularios" th:class="${formulario}"><i class="lnr lnr-file-empty"></i>
                         <span>Formularios</span></a></li>
-                    <li><a href="panels.html" class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
                     <li>
                         <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i>
                             <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                         <div id="subPages" class="collapse ">
                             <ul class="nav">
-                                <li><a href="page-profile.html" class="">Profile</a></li>
                                 <li><a href="page-login.html" class="">Login</a></li>
                                 <li><a href="/userRegister" class="">User Register</a></li>
                             </ul>

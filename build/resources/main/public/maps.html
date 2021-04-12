@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head >
 	<meta charset="utf-8">
+	<title>Mapas | OP-PUCMM</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<!-- VENDOR CSS -->
@@ -29,7 +30,12 @@
 		var locations = [
 
 		];
+		var name = ''
 		for (i = 0; i < forms.length; i++) {
+			name = forms[i].name
+			if(forms.length > 1){
+
+			}
 			locations.push(
 					[forms[i].name,
 					forms[i].location.latitude,
@@ -63,7 +69,7 @@
 	</script>
 </head>
 
-<body onload="InitMap(); updateOnlineStatus();">
+<body onload="InitMap(); updateOnlineStatus()">
 
 <script>
 
@@ -151,45 +157,10 @@
 					<div class="card mb-4">
 						<div class="card-body">
 							<div id="map" class="map"></div>
-							<!--<script th:inline="javascript">
-								function success(pos){
-									/*var crd = pos.coords
-									iniciarMap(crd.latitude, crd.longitude)*/
-									var forms = [[${formularios}]]
-									for (i = 0; i < forms.length; i++) {
-										iniciarMap(forms[i].location.latitude, forms[i].location.longitude)
-										console.log("Aqui los forms: ")
-										console.log(forms[i].location.longitude)
-									}
-
-								}
-								navigator.geolocation.getCurrentPosition(success)
-
-								function iniciarMap(lat,lng){
-									var coord = {lat:lat ,lng:lng};
-									var map = new google.maps.Map(document.getElementById('map'),{
-										zoom: 8.1,
-										center: coord
-									});
-									addMarker({lat:lat ,lng: lng}, map)
-									//addMarker({lat:lat ,lng: lng}, map)
-								}
-								function addMarker(location, map) {
-									// Add the marker at the clicked location, and add the next-available label
-									// from the array of alphabetical characters.
-									new google.maps.Marker({
-										position: location,
-										map: map
-									});
-								}
-							</script>
-							<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmO0JHOHAXY2C3Ud49KbMSwFf3APep1Ow&callback=iniciarMap"></script>
-						--></div>
+						</div>
 						<div class="card-footer">
-
 						</div>
 					</div>
-
 				</div>
 				<!-- END OVERVIEW -->
 			</div>

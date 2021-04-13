@@ -14,9 +14,9 @@ dataBase.onupgradeneeded = function (e) {
 
     //creando la colección:
     //En este caso, la colección, tendrá un Id autogenerado.
-    const formulario = active.createObjectStore("form", { keyPath : 'id', autoIncrement : true });
+    const formulario = active.createObjectStore("form", {keyPath: 'id', autoIncrement: true});
 
-    formulario.createIndex('por_indice', 'indice', {unique : true});
+    formulario.createIndex('por_indice', 'indice', {unique: true});
 
 };
 //El evento que se dispara una vez, lo
@@ -26,15 +26,14 @@ dataBase.onsuccess = function (e) {
 };
 
 dataBase.onerror = function (e) {
-    console.error('Error en el proceso: '+e.target.errorCode);
+    console.error('Error en el proceso: ' + e.target.errorCode);
 };
 
 
-//---------------------------GEOLOGIZACIÓN--------------------------------
 //Obteniendo GEOLOCALIZACIÓN
-var lati="";
-var longi="";
-let Thepicture="NONE";
+var lati = "";
+var longi = "";
+let Thepicture = "NONE";
 
 
 function GEOPosicion() {
@@ -43,19 +42,22 @@ function GEOPosicion() {
         lati = crd.latitude;
         longi = crd.longitude;
     }
+
     navigator.geolocation.getCurrentPosition(success);
 }
-function addForm() {
-    var fullName="";
-    var sector="";
-    var academicLevel="";
 
-    fullName=$("#fullName").val();
-    sector=$("#sector").val();
-    academicLevel=$("#academicLevel").val()
+function addForm() {
+    var fullName = "";
+    var sector = "";
+    var academicLevel = "";
+
+    fullName = $("#fullName").val();
+    sector = $("#sector").val();
+    academicLevel = $("#academicLevel").val()
     console.log("Nivel Escolar", academicLevel);
     //validando campos..
-    if(fullName!="" && sector!="" && academicLevel!="Nivel Academico") {
+
+    if (fullName != "" && sector != "" && academicLevel != "Nivel Academico") {
 
         var dbActiva = dataBase.result; //Nos retorna una referencia al IDBDatabase.
 
@@ -78,8 +80,6 @@ function addForm() {
 
         //Abriendo la colección de datos que estaremos usando.
         var formulario = transaccion.objectStore("form");
-
-
 
 
         //Para agregar se puede usar add o put; el add requiere que no exista el objeto.
@@ -107,42 +107,30 @@ function addForm() {
             document.querySelector("#academicLevel").value = "Nivel Academico";
         };
 
-    }
-    else {
-        if(fullName=="" ){
-            alert("Debe Completar el: Nombre...")
-        }else{
-            if( sector=="" ){
-                alert("Debe Completar el: Sector...")
-            }else{
-                if(academicLevel=="Nivel Academico"){
-                    alert("Debe Completar el: Nivel Academico...")
-                }
-            }
-        }
-
+    } else {
+        validate();
     }
 }
+
 function listarDatos() {
-    //por defecto si no lo indico el tipo de transacción será readonly
     var data = dataBase.result.transaction(["form"]);
     var formulario = data.objectStore("form");
     var contador = 0;
-    var formulario_recuperados=[];
+    var formulario_recuperados = [];
 
     //Abriendo el cursor.
-    formulario.openCursor().onsuccess=function(e) {
+    formulario.openCursor().onsuccess = function (e) {
         //Recuperando la posicion del cursor
         var cursor = e.target.result;
-        if(cursor){
+        if (cursor) {
             contador++;
             //recuperando el objeto.
             formulario_recuperados.push(cursor.value);
 
             //Función que permite seguir recorriendo el cursor.
             cursor.continue();
-        }else{
-            console.log("La cantidad de registros recuperados es: "+contador);
+        } else {
+            console.log("La cantidad de registros recuperados es: " + contador);
         }
     };
     //Una vez que se realiza la operación se llama la impresión.
@@ -150,30 +138,32 @@ function listarDatos() {
         imprimirTabla(formulario_recuperados);
     }
 }
+
 function imprimirTabla(lista_formulario) {
     // creando la tabla...
-    var fila =""
+    var fila = ""
     for (var key in lista_formulario) {
         //console.log("indice: ", key)
-        fila +="<tr>"
-        fila+= "<td>"+lista_formulario[key].id+"</td>"
-        fila+= "<td>"+lista_formulario[key].fullName+"</td>"
-        fila+=  "<td>"+lista_formulario[key].sector+"</td>"
-        fila+=  "<td>"+lista_formulario[key].academicLevel+"</td>"
-        fila+= "<td>"
-        fila+=  "<a id='editar' href='#editModal' class='edit' data-toggle='modal'>"+ "<i class='fas fa-edit' data-toggle='tooltip' title='Editar'>"+"</i>" +"</a>"
-        fila+=  "<div type='hidden'>"+ "<div>"
-        fila+= 	"<a id='borrar' href='#deleteModal' class='delete' data-toggle='modal'>"+"<i class='fas fa-trash' data-toggle='tooltip' title='Eliminar'>"+"</i>"+"</a>"
-        fila+= "</td>"
-        fila+=  "</tr>"
+        fila += "<tr>"
+        fila += "<td>" + lista_formulario[key].id + "</td>"
+        fila += "<td>" + lista_formulario[key].fullName + "</td>"
+        fila += "<td>" + lista_formulario[key].sector + "</td>"
+        fila += "<td>" + lista_formulario[key].academicLevel + "</td>"
+        fila += "<td>"
+        fila += "<a id='editar' href='#editModal' class='edit' data-toggle='modal'>" + "<i class='fas fa-edit' data-toggle='tooltip' title='Editar'>" + "</i>" + "</a>"
+        fila += "<div type='hidden'>" + "<div>"
+        fila += "<a id='borrar' href='#deleteModal' class='delete' data-toggle='modal'>" + "<i class='fas fa-trash' data-toggle='tooltip' title='Eliminar'>" + "</i>" + "</a>"
+        fila += "</td>"
+        fila += "</tr>"
 
     }
-    document.getElementById("formList").innerHTML=fila;
+    document.getElementById("formList").innerHTML = fila;
 }
+
 function deleteForm() {
 
     const id = $("#idBorrar").val();
-    console.log("ID digitadO: "+id);
+    console.log("ID digitadO: " + id);
 
     const data = dataBase.result.transaction(["form"], "readwrite");
     const formulario = data.objectStore("form");
@@ -184,32 +174,33 @@ function deleteForm() {
     };
 
 }
+
 function updateForm() {
 
     //recuperando la id.
     var id = $("#idEdit").val();
-    console.log("ID digitadO:  "+id);
+    console.log("ID digitadO:  " + id);
 
     var nombre = $("#fullNameEdit").val();
-    console.log("el nombre digitada: "+nombre);
+    console.log("el nombre digitada: " + nombre);
 
     var sector = $("#sectorEdit").val();
-    console.log("el sector digitado: "+sector);
+    console.log("el sector digitado: " + sector);
 
     var nivelEscolar = $("#academicLevelEdit").val();
-    console.log("el nivel digitado: "+nivelEscolar);
+    console.log("el nivel digitado: " + nivelEscolar);
 
     //abriendo la transacción en modo escritura.
-    var data = dataBase.result.transaction(["form"],"readwrite");
+    var data = dataBase.result.transaction(["form"], "readwrite");
     var formulario = data.objectStore("form");
 
     //buscando formulario por la referencia al key.
-    formulario.get(parseInt(id)).onsuccess = function(e) {
+    formulario.get(parseInt(id)).onsuccess = function (e) {
 
         var resultado = e.target.result;
-        console.log("los datos: "+JSON.stringify(resultado));
+        console.log("los datos: " + JSON.stringify(resultado));
 
-        if(resultado !== undefined){
+        if (resultado !== undefined) {
 
             resultado.fullName = nombre;
             resultado.sector = sector;
@@ -225,60 +216,71 @@ function updateForm() {
             solicitudUpdate.onerror = function (e) {
                 console.error("Error Datos Actualizados....");
             }
-        }else{
+        } else {
             console.log("form no encontrado...");
         }
     };
 }
-//--------------------------------Conexion con el servidor (Envios/recesión de datos)--------------------------------
+
 //abriendo el objeto para el websocket
 var webSocket;
 var tiempoReconectar = 5000;
 
-$(document).ready(function(){
-    console.info("Iniciando Jquery -  WebServices");
+$(document).ready(function () {
     conectar();
 
     //Endicar id Boton enviar datos
-    $("#enviarForm").click(function(){
+    $("#enviarForm").click(function () {
         console.log("Enviando formulario al servidor")
-        //webSocket.send($("#idUsuario").val()); ///Si se desea enviar un mensaje al sevidor
         enviarDatoServidor();
     });
 });
-function recibirInfServidor(mensaje){
-    console.log("Recibiendo del servidor: "+mensaje.data)
+
+function recibirInfServidor(mensaje) {
+    console.log("Recibiendo del servidor: " + mensaje.data)
     $("#mensajeServidor").append(mensaje.data);
 }
+
 function conectar() {
     webSocket = new WebSocket("ws://" + location.hostname + ":" + location.port + "/conectarServidor");
 
-    webSocket.onmessage = function(data){recibirInformacionServidor(data);};
-    webSocket.onopen  = function(e){ console.log("Conectado - status "+this.readyState); };
-    webSocket.onclose = function(e){
-        console.log("Desconectado - status "+this.readyState);
+    webSocket.onmessage = function (data) {
+        recibirInformacionServidor(data);
+    };
+    webSocket.onopen = function (e) {
+        console.log("Conectado - status " + this.readyState);
+    };
+    webSocket.onclose = function (e) {
+        console.log("Desconectado - status " + this.readyState);
     };
 }
-function enviarDatoServidor(){
+
+function enviarDatoServidor() {
     var data = dataBase.result.transaction(["form"]);
     var formularios = data.objectStore("form");
     var listaFormulario = formularios.getAll();
 
-    listaFormulario.onsuccess=function (){
-        //datos obtenido de forma correcta
-        webSocket.send(JSON.stringify(listaFormulario.result));
-        alert("form enviado de forma exitosa!")
-        limpiarDB();
-        listarDatos();
-    };
+        listaFormulario.onsuccess = function () {
+            if(document.querySelectorAll("#dataTable tr").length <=1){
+                $('#infoRegister').modal('show')
+            }
+            else{
+                //datos obtenido de forma correcta
+                webSocket.send(JSON.stringify(listaFormulario.result));
+                alert("form enviado de forma exitosa!")
+                limpiarDB();
+                listarDatos();
 
+            }
+        };
 
 }
-function limpiarDB(){
-    const data = dataBase.result.transaction(["form"],"readwrite");
+
+function limpiarDB() {
+    const data = dataBase.result.transaction(["form"], "readwrite");
     const objecStore = data.objectStore("form");
     const repuesta = objecStore.clear();
-    repuesta.onsuccess = function (){
+    repuesta.onsuccess = function () {
         //Se han borrados todos los formulario de la BD
         console.log("Se han borrados todos los formulario de la BD");
     };

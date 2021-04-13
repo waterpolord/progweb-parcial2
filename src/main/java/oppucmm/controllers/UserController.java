@@ -53,6 +53,7 @@ public class UserController {
             if (rol != null) {
                 if (rol.matches("Administrador"))
                     aux.setRolesList(Set.of(RoleApp.ROLE_ADMIN));
+                    aux.setRolesList(Set.of(RoleApp.ROLE_EMPLEADO));
                 if (rol.matches("Empleado"))
                     aux.setRolesList(Set.of(RoleApp.ROLE_EMPLEADO));
                 else {

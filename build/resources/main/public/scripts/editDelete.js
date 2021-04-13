@@ -13,10 +13,8 @@ $(document).ready(function ($) {
         document.formEdit.academicLevelEdit.value = role;
     });
     $('#dataTable tbody').on('click', '#borrar', function () {
-        console.log("Entrando a funcion para borrar")
         var Row = $(this).closest('tr');
         var id = Row.find('td:eq(0)').text();
-
         document.f2.idBorrar.value = id;
     });
 });

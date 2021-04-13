@@ -1,5 +1,7 @@
 package oppucmm.models;
 
+import io.javalin.core.security.Role;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
@@ -61,4 +63,13 @@ public class User implements Serializable {
     public Set<RoleApp> getRolesList() { return rolesList; }
 
     public void setRolesList(Set<RoleApp> rolesList) { this.rolesList = rolesList; }
+
+    public boolean hasRole(Role role){
+        for (RoleApp aux:rolesList){
+            if(aux.equals(role)){
+                return true;
+            }
+        }
+        return false;
+    }
 }

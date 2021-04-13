@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  manifest="sinconexion.appcache">
 <head th:fragment="head">
     <title>OP - PUCMM</title><meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -16,7 +16,8 @@
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
-    <link rel="icon" type="image/png" sizes="96x96" href="http://localhost:7000/assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/pucmm-logo.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="http://localhost:7000/assets/img/apple-icon.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <link href="css/myStyle.css" rel="stylesheet">
@@ -36,8 +37,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-default navbar-fixed-top" th:fragment="header" >
         <div class="brand">
-            <a href="form.html"><img src="http://localhost:7000/assets/img/logo-dark.png" alt="Klorofil Logo"
-                                     class="img-responsive logo"></a>
+            <h3>OP | PUCMM</h3>
         </div>
         <div class="container-fluid">
             <div class="navbar-btn">
@@ -45,14 +45,12 @@
             </div>
             <div id="navbar-menu">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a id="idIndicator" role="alert" href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                                class="lnr lnr-question-circle"></i> <span></span> <i
-                                class="icon-submenu lnr lnr-chevron-down"></i></a>
+                    <li>
+                        <a id="idIndicator" role="alert"></a>
                     </li>
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle" data-toggle="dropdown"><img
-                                src="http://localhost:7000/assets/img/icons8-admin-settings-male-50.png" class="img-circle" alt="Avatar">
+                                src="http://localhost:7000/assets/img/admin-icon.png" class="img-circle" alt="Avatar">
                             <span th:text="${fullName}"></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="/logout"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
@@ -68,21 +66,23 @@
         <div class="sidebar-scroll">
             <nav>
                 <ul class="nav">
-                    <li><a href="/mapa" th:class="${map}"><i class="lnr lnr-map"></i> <span>Mapas</span></a></li>
-                    </li>
-                    <li><a href="/report" th:class="${report}"><i class="lnr lnr-file-empty"></i>
-                        <span>Informes</span></a></li>
-                    <li><a href="/formularios" th:class="${formulario}"><i class="lnr lnr-file-empty"></i>
-                        <span>Formularios</span></a></li>
-                    <li><a href="panels.html" class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
-                    <li>
-                        <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i>
-                            <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                        <div id="subPages" class="collapse ">
-                            <ul class="nav">
-                                <li><a href="page-profile.html" class="">Profile</a></li>
-                                <li><a href="page-login.html" class="">Login</a></li>
-                                <li><a href="/userRegister" class="">User Register</a></li>
+                    <br/>
+
+                        <li  th:hidden="${!admin}" ><a href="/mapa"  th:hidden="${!admin}" th:class="${map}"><i  th:hidden="${!admin}" class="lnr lnr-map"></i> <span  th:hidden="${!admin}" >Mapas</span></a></li>
+                        </li>
+
+
+                    <li  th:hidden="${!admin}" ><a href="/report"  th:hidden="${!admin}" th:class="${report}"><i  th:hidden="${!admin}" class="lnr lnr-file-add"></i>
+                        <span  th:hidden="${!admin}" >Informes</span></a></li>
+                    <li ><a href="/formularios"  th:class="${formulario}"><i class="lnr lnr-file-empty"></i>
+                        <span >Formularios</span></a></li>
+                    <li  th:hidden="${!admin}" >
+                        <a  th:hidden="${!admin}" href="#subPages" data-toggle="collapse" class="collapsed"><i  th:hidden="${!admin}" class="lnr lnr-user"></i>
+                            <span  th:hidden="${!admin}" >Usuarios</span> <i  th:hidden="${!admin}" class="icon-submenu lnr lnr-chevron-left"></i></a>
+                        <div th:hidden="${!admin}" id="subPages" class="collapse ">
+                            <ul th:hidden="${!admin}" class="nav">
+                                <li th:hidden="${!admin}" ><a th:hidden="${!admin}" href="page-login.html" class="">Login</a></li>
+                                <li th:hidden="${!admin}" ><a th:hidden="${!admin}" href="/userRegister" class="">User Register</a></li>
                             </ul>
                         </div>
                     </li>

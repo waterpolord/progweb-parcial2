@@ -52,12 +52,11 @@ public class UserController {
             User aux = new User(fullName, username, password);
             if (rol != null) {
                 if (rol.matches("Administrador"))
-                    aux.setRolesList(Set.of(RoleApp.ROLE_ADMIN));
+                    aux.setRolesList(Set.of(RoleApp.ROLE_ADMIN,RoleApp.ROLE_EMPLEADO));
+
                 if (rol.matches("Empleado"))
                     aux.setRolesList(Set.of(RoleApp.ROLE_EMPLEADO));
-                else {
-                    aux.setRolesList(Set.of(RoleApp.ROLE_VOLUNTARIO));
-                }
+
                 if (Controller.getInstance().getUserByUsername(username) == null) {
                     Controller.getInstance().addUser(aux);
                     model.put("Success","Usuario creado de forma exitosa!");

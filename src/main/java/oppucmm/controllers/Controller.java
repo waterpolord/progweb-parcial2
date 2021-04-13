@@ -33,9 +33,10 @@ public class Controller {
         return s1.crear(u1);
     }
     /*Create fake user by default*/
-    public void createFakeUser(){
-        User u1 = new User("admin","admin","admin", Set.of(RoleApp.ROLE_ADMIN));
+    public User createFakeUser(){
+        User u1 = new User("admin","admin","admin", Set.of(RoleApp.ROLE_ADMIN,RoleApp.ROLE_EMPLEADO));
         UserService.getInstance().editar(u1);
+        return u1;
     }
     /*Create fake form by default*/
     public void createFakeForm(){

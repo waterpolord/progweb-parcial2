@@ -67,19 +67,22 @@
             <nav>
                 <ul class="nav">
                     <br/>
-                    <li><a href="/mapa" th:class="${map}"><i class="lnr lnr-map"></i> <span>Mapas</span></a></li>
-                    </li>
-                    <li><a href="/report" th:class="${report}"><i class="lnr lnr-file-empty"></i>
-                        <span>Informes</span></a></li>
-                    <li><a href="/formularios" th:class="${formulario}"><i class="lnr lnr-file-empty"></i>
-                        <span>Formularios</span></a></li>
-                    <li>
-                        <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i>
-                            <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                        <div id="subPages" class="collapse ">
-                            <ul class="nav">
-                                <li><a href="page-login.html" class="">Login</a></li>
-                                <li><a href="/userRegister" class="">User Register</a></li>
+
+                        <li  th:hidden="${!admin}" ><a href="/mapa"  th:hidden="${!admin}" th:class="${map}"><i  th:hidden="${!admin}" class="lnr lnr-map"></i> <span  th:hidden="${!admin}" >Mapas</span></a></li>
+                        </li>
+
+
+                    <li  th:hidden="${!admin}" ><a href="/report"  th:hidden="${!admin}" th:class="${report}"><i  th:hidden="${!admin}" class="lnr lnr-file-add"></i>
+                        <span  th:hidden="${!admin}" >Informes</span></a></li>
+                    <li ><a href="/formularios"  th:class="${formulario}"><i class="lnr lnr-file-empty"></i>
+                        <span >Formularios</span></a></li>
+                    <li  th:hidden="${!admin}" >
+                        <a  th:hidden="${!admin}" href="#subPages" data-toggle="collapse" class="collapsed"><i  th:hidden="${!admin}" class="lnr lnr-user"></i>
+                            <span  th:hidden="${!admin}" >Usuarios</span> <i  th:hidden="${!admin}" class="icon-submenu lnr lnr-chevron-left"></i></a>
+                        <div th:hidden="${!admin}" id="subPages" class="collapse ">
+                            <ul th:hidden="${!admin}" class="nav">
+                                <li th:hidden="${!admin}" ><a th:hidden="${!admin}" href="page-login.html" class="">Login</a></li>
+                                <li th:hidden="${!admin}" ><a th:hidden="${!admin}" href="/userRegister" class="">User Register</a></li>
                             </ul>
                         </div>
                     </li>

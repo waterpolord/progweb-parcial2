@@ -14,7 +14,7 @@ dataBase.onupgradeneeded = function (e) {
 
     //creando la colección:
     //En este caso, la colección, tendrá un Id autogenerado.
-    const formulario = active.createObjectStore("form", {keyPath: 'id', autoIncrement: true});
+    const formulario = active.createObjectStore("form", {keyPath: 'id', autoIncrement: false});
 
     formulario.createIndex('por_indice', 'indice', {unique: true});
 
@@ -105,7 +105,9 @@ function addForm() {
             document.querySelector("#fullName").value = "";
             document.querySelector("#sector").value = "";
             document.querySelector("#academicLevel").value = "Nivel Academico";
+            console.log(formulario)
         };
+
 
     } else {
         validate();
@@ -145,7 +147,7 @@ function imprimirTabla(lista_formulario) {
     for (var key in lista_formulario) {
         //console.log("indice: ", key)
         fila += "<tr>"
-        fila += "<td>" + lista_formulario[key].id + "</td>"
+        fila += "<td type=\"hidden\" >" + lista_formulario[key].id + "</td>"
         fila += "<td>" + lista_formulario[key].fullName + "</td>"
         fila += "<td>" + lista_formulario[key].sector + "</td>"
         fila += "<td>" + lista_formulario[key].academicLevel + "</td>"
@@ -171,7 +173,9 @@ function deleteForm() {
     formulario.delete(parseInt(id)).onsuccess = function (e) {
         console.log("form eliminado...");
         listarDatos();
+
     };
+
 
 }
 

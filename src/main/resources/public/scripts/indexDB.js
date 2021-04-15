@@ -264,7 +264,7 @@ function conectar() {
     webSocket = new WebSocket("wss://" + location.hostname + ":" + location.port + "/conectarServidor");
     var req = new XMLHttpRequest();
     req.timeout = 5000;
-    req.open('GET', "https://" + location.hostname + ":" + location.port + "/formulario", true);
+    req.open('GET', "https://" + location.hostname + ":" + location.port + "/formularios", true);
     req.send();
     //indicando los eventos:
     webSocket.onmessage = function(data){recibirInformacionServidor(data);};

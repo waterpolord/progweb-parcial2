@@ -271,14 +271,14 @@ function conectar() {
     webSocket.onopen  = function(e){
         var req = new XMLHttpRequest();
         req.timeout = 5000;
-        req.open('GET', "https://" + location.hostname + ":" + location.port + "/formulario", true);
+        req.open('GET', "https://" + location.hostname + ":" + location.port + "/formularios", true);
         req.send();
         console.log("Conectado - status "+this.readyState); };
     webSocket.onclose = function(e){
         console.log("Desconectado - status "+this.readyState);
         var req = new XMLHttpRequest();
         req.timeout = 5000;
-        req.open('GET', "https://" + location.hostname + ":" + location.port + "/formulario", true);
+        req.open('GET', "https://" + location.hostname + ":" + location.port + "/formularios", true);
         req.send();
     };
 }

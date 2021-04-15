@@ -261,7 +261,7 @@ function recibirInfServidor(mensaje) {
 }*/
 
 function conectar() {
-    webSocket = new WebSocket("ws://" + "astrocaribbean.tech" + ":" + location.port + "/conectarServidor");
+    webSocket = new WebSocket("wss://" + "astrocaribbean.tech" + ":" + location.port + "/conectarServidor");
     var req = new XMLHttpRequest();
     req.timeout = 5000;
     req.open('GET', "https://" + "astrocaribbean.tech" + ":" + location.port + "/formularios", true);

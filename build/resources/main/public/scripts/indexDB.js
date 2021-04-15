@@ -147,7 +147,7 @@ function imprimirTabla(lista_formulario) {
     for (var key in lista_formulario) {
         console.log("indice: ", lista_formulario[key])
         fila += "<tr>"
-        fila += "<td type=\"hidden\" >" + lista_formulario[key].id + "</td>"
+        fila += "<td>" + lista_formulario[key].id + "</td>"
         fila += "<td>" + lista_formulario[key].fullName + "</td>"
         fila += "<td>" + lista_formulario[key].sector + "</td>"
         fila += "<td>" + lista_formulario[key].academicLevel + "</td>"
@@ -245,8 +245,9 @@ function recibirInfServidor(mensaje) {
     $("#mensajeServidor").append(mensaje.data);
 }
 
-function conectar() {
-    webSocket = new WebSocket("ws://" + location.hostname + ":" + location.port + "/conectarServidor");
+/*function conectar() {
+    let url = "https://astrocaribbean.tech:7000/wss"
+    let webSocket = new WebSocket(url);
 
     webSocket.onmessage = function (data) {
         recibirInformacionServidor(data);
@@ -257,7 +258,32 @@ function conectar() {
     webSocket.onclose = function (e) {
         console.log("Desconectado - status " + this.readyState);
     };
+}*/
+
+function conectar() {
+    webSocket = new WebSocket("wss://" + location.hostname + ":" + location.port + "/conectarServidor");
+    var req = new XMLHttpRequest();
+    req.timeout = 5000;
+    req.open('GET', "https://" + location.hostname + ":" + location.port + "/formulario", true);
+    req.send();
+    //indicando los eventos:
+    webSocket.onmessage = function(data){recibirInformacionServidor(data);};
+    webSocket.onopen  = function(e){
+        var req = new XMLHttpRequest();
+        req.timeout = 5000;
+        req.open('GET', "https://" + location.hostname + ":" + location.port + "/formulario", true);
+        req.send();
+        console.log("Conectado - status "+this.readyState); };
+    webSocket.onclose = function(e){
+        console.log("Desconectado - status "+this.readyState);
+        var req = new XMLHttpRequest();
+        req.timeout = 5000;
+        req.open('GET', "https://" + location.hostname + ":" + location.port + "/formulario", true);
+        req.send();
+    };
 }
+
+
 
 function enviarDatoServidor() {
     var data = dataBase.result.transaction(["form"]);

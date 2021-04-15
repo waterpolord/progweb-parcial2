@@ -147,7 +147,7 @@ function imprimirTabla(lista_formulario) {
     for (var key in lista_formulario) {
         console.log("indice: ", lista_formulario[key])
         fila += "<tr>"
-        fila += "<td type=\"hidden\" >" + lista_formulario[key].id + "</td>"
+        fila += "<td>" + lista_formulario[key].id + "</td>"
         fila += "<td>" + lista_formulario[key].fullName + "</td>"
         fila += "<td>" + lista_formulario[key].sector + "</td>"
         fila += "<td>" + lista_formulario[key].academicLevel + "</td>"

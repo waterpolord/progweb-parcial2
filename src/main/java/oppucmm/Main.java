@@ -46,7 +46,7 @@ public class Main {
       //  Controller.getInstance().createFakeForm();
         // Ubicaciones de prueba
         Location l1 = new Location( -70.663414, 19.453105);
-        Location l2 = new Location( -70.644531, 19.456018);
+        Location l2 = new Location( -70.644531, 19.453105);
         Location l3 = new Location( -70.664787, 19.473174);
 
        // Formularios de prueba

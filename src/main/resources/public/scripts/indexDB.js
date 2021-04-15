@@ -261,24 +261,24 @@ function recibirInfServidor(mensaje) {
 }*/
 
 function conectar() {
-    webSocket = new WebSocket("wss://" + "astrocaribbean.tech" + ":" + location.port + "/conectarServidor");
+    webSocket = new WebSocket("wss://" + location.hostname + ":" + location.port + "/conectarServidor");
     var req = new XMLHttpRequest();
     req.timeout = 5000;
-    req.open('GET', "https://" + "astrocaribbean.tech" + ":" + location.port + "/formularios", true);
+    req.open('GET', "https://" + location.hostname + ":" + location.port + "/formularios", true);
     req.send();
     //indicando los eventos:
     webSocket.onmessage = function(data){recibirInformacionServidor(data);};
     webSocket.onopen  = function(e){
         var req = new XMLHttpRequest();
         req.timeout = 5000;
-        req.open('GET', "https://" + "astrocaribbean.tech" + ":" + location.port + "/formularios", true);
+        req.open('GET', "https://" + location.hostname + ":" + location.port + "/formularios", true);
         req.send();
         console.log("Conectado - status "+this.readyState); };
     webSocket.onclose = function(e){
         console.log("Desconectado - status "+this.readyState);
         var req = new XMLHttpRequest();
         req.timeout = 5000;
-        req.open('GET', "https://" + "astrocaribbean.tech" + ":" + location.port + "/formularios", true);
+        req.open('GET', "https://" + location.hostname + ":" + location.port + "/formularios", true);
         req.send();
     };
 }

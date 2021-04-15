@@ -1,5 +1,6 @@
 # SEGUNDO PARCIAL (INTERNET AVANZADO)
 URL: https://astrocaribbean.tech/
+
 La Oficina de Planeamiento (OP) de la PUCMM, solicita a la Escuela en Computación y
 Telecomunicaciones, su ayuda para realizar una encuesta a la población de la zona norte
 del país. La OP pretende dotar al personal de apoyo con teléfonos inteligentes o tabletas

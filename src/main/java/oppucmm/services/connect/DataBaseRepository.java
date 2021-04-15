@@ -17,11 +17,7 @@ public class DataBaseRepository<T> {
 
     public DataBaseRepository(Class<T> clase) {
         if (entityManagerFactory == null) {
-            if(Main.getModoConexion().equalsIgnoreCase("Heroku")){
-                entityManagerFactory = getConfiguracionBaseDatosHeroku();
-            }else{
-                entityManagerFactory = Persistence.createEntityManagerFactory("persistenceUnit");
-            }
+            entityManagerFactory = Persistence.createEntityManagerFactory("persistenceUnit");
         }
         this.claseEntidad = clase;
     }

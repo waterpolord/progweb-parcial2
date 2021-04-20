@@ -13,7 +13,7 @@ dataBase.onupgradeneeded = function (e) {
 
     //creando la colección:
     //En este caso, la colección, tendrá un Id autogenerado.
-    const formulario = active.createObjectStore("form", {keyPath: 'id', autoIncrement: true});
+    const formulario = active.createObjectStore("form", {keyPath: 'id', autoIncrement: false});
 
     formulario.createIndex('por_indice', 'indice', {unique: true});
 
@@ -260,29 +260,27 @@ function recibirInfServidor(mensaje) {
 }*/
 
 function conectar() {
-    webSocket = new WebSocket("wss://" + location.hostname + ":" + location.port + "/conectarServidor");
+    webSocket = new WebSocket("wss://" + location.host + ":" + location.port + "/conectarServidor");
     var req = new XMLHttpRequest();
     req.timeout = 5000;
-    req.open('GET', "https://" + location.hostname + ":" + location.port + "/formularios", true);
+    req.open('GET', "https://" + location.host + ":" + location.port + "/formularios", true);
     req.send();
     //indicando los eventos:
     webSocket.onmessage = function(data){recibirInformacionServidor(data);};
     webSocket.onopen  = function(e){
         var req = new XMLHttpRequest();
         req.timeout = 5000;
-        req.open('GET', "https://" + location.hostname + ":" + location.port + "/formularios", true);
+        req.open('GET', "https://" + location.host + ":" + location.port + "/formularios", true);
         req.send();
         console.log("Conectado - status "+this.readyState); };
     webSocket.onclose = function(e){
         console.log("Desconectado - status "+this.readyState);
         var req = new XMLHttpRequest();
         req.timeout = 5000;
-        req.open('GET', "https://" + location.hostname + ":" + location.port + "/formularios", true);
+        req.open('GET', "https://" + location.host + ":" + location.port + "/formularios", true);
         req.send();
     };
 }
-
-
 
 
 
@@ -291,19 +289,19 @@ function enviarDatoServidor() {
     var formularios = data.objectStore("form");
     var listaFormulario = formularios.getAll();
 
-    listaFormulario.onsuccess = function () {
-        if(document.querySelectorAll("#dataTable tr").length <=1){
-            $('#infoRegister').modal('show')
-        }
-        else{
-            //datos obtenido de forma correcta
-            webSocket.send(JSON.stringify(listaFormulario.result));
-            alert("form enviado de forma exitosa!")
-            limpiarDB();
-            listarDatos();
+        listaFormulario.onsuccess = function () {
+            if(document.querySelectorAll("#dataTable tr").length <=1){
+                $('#infoRegister').modal('show')
+            }
+            else{
+                //datos obtenido de forma correcta
+                webSocket.send(JSON.stringify(listaFormulario.result));
+                alert("form enviado de forma exitosa!")
+                limpiarDB();
+                listarDatos();
 
-        }
-    };
+            }
+        };
 
 }
 

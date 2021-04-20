@@ -38,7 +38,9 @@ public class Main {
             config.addStaticFiles("/public");
             config.registerPlugin(new RouteOverviewPlugin("/rutas"));
             config.enableCorsForAllOrigins();
+
             JavalinRenderer.register(JavalinThymeleaf.INSTANCE, ".html");
+
         }).start(7000);
         //Create fake user
         User auxUsuario = Controller.getInstance().createFakeUser();
